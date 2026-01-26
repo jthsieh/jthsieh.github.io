@@ -39,7 +39,7 @@ const people = {
     JuanCarlosNiebles: { name: "Juan Carlos Niebles", url: "http://www.niebles.net/" },
     ZelunLuo: { name: "Zelun Luo", url: "https://alan.vision/" },
     LuJiang: { name: "Lu Jiang", url: "http://www.lujiang.info/" },
-    WenChao: { name: "Wen Chao", url: "https://okumuragroup.sites.caltech.edu/people/group-members/wen-chao" },
+    WenChao: { name: "Wen Chao", url: null },
     JimJrMinLin: { name: "Jim Jr-Min Lin", url: "https://www.iams.sinica.edu.tw/en/?link=member&id=3" },
     AssafReiner: { name: "Assaf Reiner", url: null },
     LuciaMirabella: { name: "Lucia Mirabella", url: null },
