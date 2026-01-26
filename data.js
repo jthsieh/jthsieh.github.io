@@ -66,7 +66,8 @@ const recentPublications = [
         title: "Coloring 3-Colorable Graphs with Low Threshold Rank",
         url: "https://arxiv.org/abs/2508.03093",
         authors: ["Jun-Ting Hsieh"],
-        venue: "SODA, 2026"
+        venue: "SODA, 2026",
+        // extraLink: { text: "[Slides]", url: "files/slides/soda26.pdf" }
     },
     {
         title: "Sparsifying Cayley Graphs on Every Group",
