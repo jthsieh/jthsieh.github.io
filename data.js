@@ -44,7 +44,7 @@ const people = {
     AssafReiner: { name: "Assaf Reiner", url: null },
     LuciaMirabella: { name: "Lucia Mirabella", url: null },
     StephanEismann: { name: "Stephan Eismann", url: null },
-    ShengjiaZhao: { name: "Shengjia Zhao", url: null },
+    ShengjiaZhao: { name: "Shengjia Zhao*", url: null },
     ChunHungChang: { name: "Chun-Hung Chang", url: null }
 };
 
