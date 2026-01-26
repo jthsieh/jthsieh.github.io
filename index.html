@@ -1,697 +1,277 @@
-
 <!doctype html>
-<html>
+<html lang="en" class="scroll-smooth">
 
 <head>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149663662-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-149663662-1');
-  </script>
-
-
-    <title>Jun-Ting (Tim) Hsieh</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <title>Jun-Ting (Tim) Hsieh</title>
+    <meta name="description" content="Personal website of Jun-Ting (Tim) Hsieh, C.L.E. Moore Instructor of Mathematics at MIT.">
+    
+    <!-- FAVICON: Initials "JH" in a blue circle matching your theme -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22rgb(59, 130, 246)%22/><text x=%2250%22 y=%2255%22 font-family=%22Arial, sans-serif%22 font-weight=%22bold%22 font-size=%2245%22 fill=%22white%22 text-anchor=%22middle%22>JH</text></svg>">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700&display=swap" rel="stylesheet">
 
     <style>
-        li div { text-align:right; }
-        li div span { float:left; }
-        .publogo {
-            margin-right: 20px;
+        /* --- COLOR CONFIGURATION --- */
+        :root {
+            /* Blue color similar to original Bootstrap primary or custom choice */
+            --main-rgb: 59, 130, 246; 
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+        }
+
+        /* Custom Text Color Class */
+        .text-primary {
+            color: rgb(var(--main-rgb));
+            transition: opacity 0.2s;
+        }
+        .text-primary:hover {
+            opacity: 0.75; 
+        }
+
+        /* Custom Border Color Class */
+        .border-primary {
+            border-color: rgb(var(--main-rgb));
         }
         
-        .publication {
-            padding-left: 25px;
-            padding-top: 5px;
-            margin-bottom: 0px;
-        }
-		
-        .publication strong a {
-            color: #000;
-            text-decoration: none;
+        /* Sidebar Link Active State */
+        .nav-link.active {
+            background-color: #e2e8f0; /* slate-200 */
+            color: #1a202c; /* gray-900 */
+            font-weight: 700;
+            border-right: 4px solid rgb(var(--main-rgb)); 
         }
         
-        .publication strong a:hover {
-            text-decoration: underline;
+        section {
+            scroll-margin-top: 2rem;
         }
-        
-        .publication .links a {
-            margin-right: 15px;
-            color: #228B22;
-        }
-        
-        .pad {
-          padding-top: 10px;
-        }
-        
-        .press {
-            display: inline-block;
-            padding: 5px;
-            height: 70px;
-        }
-        .press a img {
-            border: 3px solid #fff;
-            border-ra truncated 1065bytes...
     </style>
 
-    <!-- <link rel="shortcut icon" href="/files/assets/images/favicon.ico"> -->
+    <!-- Google Analytics (Preserved from source) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149663662-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-149663662-1');
+    </script>
 </head>
 
-<body>
+<body class="bg-gray-50 text-gray-800 flex flex-col md:flex-row min-h-screen">
 
-    <div class="topbar">
-        <div class="container">
-            <div>
-				<div class="row mt-0">
-					<br>
-				</div>
-                <div class="row mt-0">
-                    <div class="col-4 col-sm-4 col-md-3 col-lg-2 p-0 pl-0 pl-sm-4 offset-xl-1 col-xl-4">
-                        <a href="files/tim.jpg"><img src="files/tim.jpg" id="me" width="90%" itemprop="photo" class="float-left img-fluid"></a>
-                    </div>
-
-
-                    <div class="col-8 col-sm-8 col-md-9 col-lg-10 pl-3 pr-1 px-sm-4 pl-md-5 pt-1 pb-1 pb-sm-1 pt-sm-1 nameplate col-xl-6 offset-xl-0">
-                        <h2 class="hidden-xs-down"><span itemprop="name">Jun-Ting (Tim) Hsieh</span></h2>
-                        <p class="my-0"> C.L.E. Moore Instructor of Mathematics, MIT<br>
-                          juntingh [at] mit [dot] edu <br>
-  <a href="https://scholar.google.com/citations?hl=en&user=zYhq-BEAAAAJ&view_op=list_works&sortby=pubdate">Google scholar </a>
-  </p>
-                    </div>
-
-                </div>
-
+    <!-- LEFT SIDEBAR (Sticky) -->
+    <!-- Increased width from w-80 to w-96 -->
+    <aside class="w-full md:w-96 bg-white shadow-lg flex-shrink-0 flex flex-col z-20 md:h-screen md:sticky md:top-0">
+        <div class="p-8 flex flex-col items-center text-center overflow-y-auto">
+            
+            <!-- Profile Image Container -->
+            <div class="relative w-40 h-40 mb-6 rounded-full overflow-hidden border-4 border-gray-100 shadow-sm">
+                <img id="profile-pic" 
+                     src="files/tim.jpg" 
+                     alt="Jun-Ting (Tim) Hsieh" 
+                     class="w-full h-full object-cover transition-opacity duration-500 ease-in-out"
+                     onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Tim+Hsieh&size=256&background=random';">
             </div>
+
+            <!-- Name & Title -->
+            <h1 class="text-2xl font-bold text-gray-900 mb-1">Jun-Ting (Tim) Hsieh</h1>
+            <p class="text-base text-gray-600 mb-4">C.L.E. Moore Instructor of Mathematics<br>MIT</p>
+
+            <!-- Links -->
+            <div class="flex flex-wrap justify-center gap-3 text-base mb-6">
+                <!-- Add CV link if available in files/ -->
+                <!-- <a href="files/cv.pdf" target="_blank" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-700 transition">
+                    <i class="fas fa-file-alt mr-1"></i> CV
+                </a> -->
+                <a href="https://scholar.google.com/citations?hl=en&user=zYhq-BEAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-700 transition">
+                    <i class="fas fa-graduation-cap mr-1"></i> Google Scholar
+                </a>
+            </div>
+            
+            <div class="text-sm text-gray-500 mb-6">
+                <i class="fas fa-envelope mr-1"></i> juntingh [at] mit [dot] edu
+            </div>
+
+            <!-- Navigation Menu -->
+            <nav class="w-full">
+                <ul class="space-y-2">
+                    <li>
+                        <a href="#about" class="nav-link active w-full text-left px-6 py-3 rounded-lg hover:bg-gray-50 transition flex items-center text-gray-600 text-lg">
+                            <i class="fas fa-user w-6 text-center mr-3 text-gray-400"></i> About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#publications" class="nav-link w-full text-left px-6 py-3 rounded-lg hover:bg-gray-50 transition flex items-center text-gray-600 text-lg">
+                            <i class="fas fa-flask w-6 text-center mr-3 text-gray-400"></i> Publications
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-    </div>
+    </aside>
 
+    <!-- RIGHT MAIN CONTENT -->
+    <main class="flex-1 p-6 md:py-12 md:pr-12 md:pl-32">
+        <div class="max-w-5xl">
+        
+            <!-- ABOUT SECTION -->
+            <section id="about" class="mb-20 pt-4">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">About Me</h2>
+                
+                <div class="prose max-w-none text-gray-700 space-y-4 text-lg">
+                    <p>
+                        I am a <a href="https://math.mit.edu/directory/profile.html?pid=2798" class="text-primary hover:underline">C.L.E. Moore Instructor of Mathematics</a> at MIT (departmental postdoc)!
+                    </p>
 
-    <div class="container">
-      <div>
+                    <p>
+                        My official name is Jun-Ting Hsieh, but I go by the name "<strong>Tim</strong>".
+                        I completed my PhD in the Computer Science Department at Carnegie Mellon University,
+                        where I was fortunate to be advised by <a href="http://praveshkkothari.org/" class="text-primary hover:underline">Pravesh K. Kothari</a>.
+                        I am broadly interested in Theoretical Computer Science.
+                        Recently, I've been thinking about constructions of expanders and their applications in coding theory.
+                        More generally, my research interests (and prior work) include average-case algorithms, semidefinite programming and the Sum-of-Squares hierarchy, and connections between TCS and extremal combinatorics.
+                    </p>
 
-      <div class="row">
-        <div class="row-lg-8 col-12 pt-3 pl-4 bubble offset-xl-1 col-xl-10">
+                    <!-- Job Market Banner -->
+                    <div class="bg-gray-100 border-l-4 border-primary p-4 mt-6 rounded-r">
+                        <p class="font-medium text-gray-800">
+                            I will be on the academic job market in Spring 2027 for positions starting in Fall 2027 (together with <a href="https://clarabing.github.io/" target="_blank" class="text-primary hover:underline">Bingbin Liu</a>). Please keep us in mind!
+                        </p>
+                    </div>
+                </div>
+            </section>
 
-        <!-- ####################### About me ####################### -->
-          <h4>About me</h4>
+            <!-- PUBLICATIONS SECTION -->
+            <section id="publications" class="mb-40 pt-4">
+                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Publications</h2>
+                
+                <!-- Current Publications (Generated by JS) -->
+                <div id="pub-list-recent" class="space-y-6 mb-12"></div>
 
-          <p>
-          I am a <a href="https://math.mit.edu/directory/profile.html?pid=2798">C.L.E. Moore Instructor of Mathematics</a> at MIT (departmental postdoc)!
-          </p>
+                <!-- Previous ML Publications (Generated by JS) -->
+                <h3 class="text-lg font-semibold text-gray-500 mb-6 uppercase tracking-wider border-t pt-8">Previous Publications in Machine Learning</h3>
+                <div id="pub-list-ml" class="space-y-6 mb-12"></div>
 
-          <p>
-          My official name is Jun-Ting Hsieh, but I go by the name "<strong>Tim</strong>".
-          I completed my PhD in the Computer Science Department at Carnegie Mellon University,
-          where I was fortunate to be advised by <a href="http://praveshkkothari.org/">Pravesh K. Kothari</a>.
-          I am broadly interested in Theoretical Computer Science.
-          Recently, I've been thinking about constructions of expanders and their applications in coding theory.
-          More generally, my research interests (and prior work) include average-case algorithms, semidefinite programming and the Sum-of-Squares hierarchy, and connections between TCS and extremal combinatorics.
-          </p>
-
-          <p>
-          I had the privilege of visiting <a href="https://lucatrevisan.github.io/">Luca Trevisan</a> at Bocconi University in the summer of 2022, and visiting <a href="https://people.eecs.berkeley.edu/~venkatg/">Venkatesan Guruswami</a> and <a href="https://people.eecs.berkeley.edu/~prasad/">Prasad Raghavendra</a> at Berkeley in the summer of 2023.
-          </p>
-
-          <!--
-          <p>
-          In the past, I have worked on artificial intelligence and machine learning.
-          I did my undergraduate and masters at Stanford University, where I worked with
-          <a href="http://vision.stanford.edu/feifeili/">Fei-Fei Li</a>
-          and 
-          <a href="https://cs.stanford.edu/~ermon/">Stefano Ermon</a>
-          on machine learning projects.
-          I'd also like to thank <a href="http://theory.stanford.edu/~liyang/">Li-Yang Tan</a> 
-          at Stanford for sparking my interest in TCS.
-          </p>
-
-          <p>
-          I am also very interested in physics and natural sciences in general.
-          Check out my projects in <strong>Quantum Complexity</strong> (<a href='files/projects/BQP.pdf'>pdf</a>) and <strong>Quantum Information</strong> (<a href='files/projects/Quantum_Information_Theory.pdf'>pdf</a>).
-
-          I have also worked with Prof. <a href="https://www.ch.ntu.edu.tw/english/faculty/?id=jimlin&lang=en">Jr-Min Lin</a> on measuring the reaction rates of chemicals related to atmospheric ozone,
-          which was later published in <a href="http://science.sciencemag.org/content/347/6223/751"><em>Science, 2015</em></a>.
-          </p>
-          -->
-
+                <!-- Physical Chemistry (Generated by JS) -->
+                <h3 class="text-lg font-semibold text-gray-500 mb-6 uppercase tracking-wider border-t pt-8">Physical Chemistry</h3>
+                <div id="pub-list-chem" class="space-y-6"></div>
+            </section>
         </div>
+    </main>
 
-      </div>
+    <!-- DATA IMPORT -->
+    <script src="data.js"></script>
 
+    <script>
+        // --- RANDOM PHOTO LOGIC ---
+        const profilePhotos = [
+            'files/tim.jpg',
+            'files/tim.jpg', 
+            'files/tim.jpg'  
+        ];
 
-    <div class="row mb-3">
-      <div class="col-12 pt-3  px-4 pb-4   bubble offset-xl-1 col-xl-10">
+        function renderPublications(listId, data) {
+            const container = document.getElementById(listId);
+            if (!container) return;
+            
+            container.innerHTML = data.map(paper => {
+                // Render author list: strings stay strings, objects become links
+                const renderedAuthors = paper.authors.map(author => {
+                    if (typeof author === 'string') {
+                        return author;
+                    } else if (author && author.url) {
+                        return `<a href="${author.url}" target="_blank" class="hover:underline">${author.name}</a>`;
+                    } else if (author) {
+                        return author.name; // Fallback if url is null
+                    }
+                    return "";
+                }).join(", ");
 
-      <!-- ####################### Publications ####################### -->
-      <h4>Publications</h4>
+                let awardHtml = paper.award ? `<span class="text-yellow-800 font-bold ml-2">${paper.award}</span>` : '';
+                let extraHtml = '';
+                
+                if (paper.extraLink2) {
+                     extraHtml += `<a href="${paper.extraLink2.url}" target="_blank" class="text-primary hover:underline mr-2">${paper.extraLink2.text}</a>`;
+                }
+                if (paper.extraLink) {
+                    extraHtml += `<a href="${paper.extraLink.url}" target="_blank" class="text-primary hover:underline">${paper.extraLink.text}</a>`;
+                }
+                if (extraHtml) {
+                    extraHtml = `<div class="mt-1 text-base">${extraHtml}</div>`;
+                }
 
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2601.12606">
-            Explicit Almost-Optimal ε-Balanced Codes via Free Expander Walks</a></strong>
-            <br>
-            Jun-Ting Hsieh,
-            <a href="http://sidhanthm.com/">Sidhanth Mohanty</a>,
-            <a href="https://www.rachelyunzhang.com/">Rachel Yun Zhang</a>
-            <br>
-            <em>Preprint</em>, 2026<br>
-            </p>
-          </div>
-        </div>
+                return `
+                    <div>
+                        <h4 class="text-lg font-bold text-gray-900 leading-tight">
+                            <a href="${paper.url}" target="_blank" class="hover:text-primary hover:underline">${paper.title}</a>
+                        </h4>
+                        <p class="text-gray-700 mt-1">
+                            ${renderedAuthors}
+                        </p>
+                        <p class="text-base text-gray-500 mt-1 italic">
+                            ${paper.venue} ${awardHtml}
+                        </p>
+                        ${extraHtml}
+                    </div>
+                `;
+            }).join('');
+        }
 
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2601.05850">
-            Rigorous Implications of the Low-Degree Heuristic</a></strong>
-            <br>
-            Jun-Ting Hsieh,
-            <a href="https://cseweb.ucsd.edu/~dakane/">Daniel M. Kane</a>,
-            <a href="http://praveshkkothari.org/">Pravesh K. Kothari</a>,
-            <a href="https://jerryzli.github.io/">Jerry Li</a>,
-            <a href="http://sidhanthm.com/">Sidhanth Mohanty</a>,
-            <a href="https://stefantiegel.com/">Stefan Tiegel</a>
-            <br>
-            <em>Preprint</em>, 2026<br>
-            </p>
-          </div>
-        </div>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Render Publications
+            renderPublications('pub-list-recent', recentPublications);
+            renderPublications('pub-list-ml', mlPublications);
+            renderPublications('pub-list-chem', chemPublications);
 
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://www.arxiv.org/abs/2508.08078">
-            Sparsifying Cayley Graphs on Every Group</a></strong>
-            <br>
-            Jun-Ting Hsieh,
-            <a href="https://dan-iel-lee.vercel.app/">Daniel Z. Lee</a>,
-            <a href="http://sidhanthm.com/">Sidhanth Mohanty</a>,
-            <a href="https://www.louieputterman.com/">Aaron Putterman</a>,
-            <a href="https://www.rachelyunzhang.com/">Rachel Yun Zhang</a>
-            <br>
-            <em>SODA</em>, 2026<br>
-            </p>
-          </div>
-        </div>
+            // --- RANDOM PHOTO LOGIC ---
+            const randomPhoto = profilePhotos[Math.floor(Math.random() * profilePhotos.length)];
+            const imgElement = document.getElementById('profile-pic');
+            if (imgElement) imgElement.src = randomPhoto;
+            
+            // --- TAB CLICK HANDLER ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                        history.pushState(null, null, targetId);
+                    }
+                });
+            });
 
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2508.03093">
-            Coloring 3-Colorable Graphs with Low Threshold Rank</a></strong>
-            <br>
-            Jun-Ting Hsieh
-            <br>
-            <em>SODA</em>, 2026<br>
-            </p>
-          </div>
-        </div>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2507.10833">
-            Solving Random Planted CSPs below the n^{k/2} Threshold</a></strong>
-            <br>
-            <a href="https://arponbasu.github.io/">Arpon Basu</a>,
-            Jun-Ting Hsieh,
-            <a href="https://www.pacm.princeton.edu/people/andrew-lin">Andrew D. Lin</a>,
-            <a href="https://www.math.ias.edu/~pmanohar/">Peter Manohar</a>
-            <br>
-            <em>arXiv</em>, 2025<br>
-            </p>
-          </div>
-        </div>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2504.15087">
-            Explicit Lossless Vertex Expanders</a></strong>
-            <br>
-            Jun-Ting Hsieh,
-            <a href="https://ma.huji.ac.il/~alexlub/">Alex Lubotzky</a>,
-            <a href="http://sidhanthm.com/">Sidhanth Mohanty</a>,
-            Assaf Reiner,
-            <a href="https://www.rachelyunzhang.com/">Rachel Yun Zhang</a>
-            <br>
-            <em>FOCS</em>, 2025<br>
-            <em><strong>Best Paper Award</strong></em><br>
-            <span class="links">
-            <a href="https://www.cs.cmu.edu/~csd-phd-blog/2025/lossless-expanders/">[CMU blog]</a> 
-            </span>
-            </p>
-          </div>
-        </div>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2505.17360">
-            The Quasi-Polynomial Low-Degree Conjecture is False</a></strong>
-            <br>
-            <a href="https://raresbuhai.com/">Rares-Darius Buhai</a>,
-            Jun-Ting Hsieh,
-            <a href="https://sites.google.com/view/aayushjain/home">Aayush Jain</a>,
-            <a href="http://praveshkkothari.org/">Pravesh K. Kothari</a>
-            <br>
-            <em>FOCS</em>, 2025<br>
-            </p>
-          </div>
-        </div>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2411.14361">
-            Improved Lower Bounds for all Odd-Query Locally Decodable Codes</a></strong>
-            <br>
-            <a href="https://arponbasu.github.io/">Arpon Basu</a>,
-            Jun-Ting Hsieh,
-            <a href="http://praveshkkothari.org/">Pravesh K. Kothari</a>,
-            <a href="https://www.pacm.princeton.edu/people/andrew-lin">Andrew D. Lin</a>
-            <br>
-            <em>FOCS</em>, 2025<br>
-            </p>
-          </div>
-        </div>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2411.11627">
-            Explicit Two-Sided Vertex Expanders Beyond the Spectral Barrier</a></strong>
-            <br>
-            Jun-Ting Hsieh,
-            <a href="https://scholar.google.com/citations?user=j_GVklEAAAAJ&hl=en">Ting-Chun Lin</a>,
-            <a href="http://sidhanthm.com/">Sidhanth Mohanty</a>,
-            <a href="https://www.cs.cmu.edu/~odonnell/">Ryan O'Donnell</a>,
-            <a href="https://www.rachelyunzhang.com/">Rachel Yun Zhang</a>
-            <br>
-            <em>STOC</em>, 2025<br>
-            <em><strong>Invited to SICOMP Special Issue for STOC 2025</strong></em>
-            </p>
-          </div>
-        </div>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2405.10238">
-            Rounding Large Independent Sets on Expanders</a></strong>
-            <br>
-            <a href="https://mitalibafna.github.io/">Mitali Bafna</a>,
-            Jun-Ting Hsieh,
-            <a href="http://praveshkkothari.org/">Pravesh K. Kothari</a>
-            <br>
-            <em>STOC</em>, 2025<br>
-            <span class="links">
-            <a href="https://www.ias.edu/video/rounding-large-independent-sets-expanders">[Talk at IAS]</a> 
-            </span>
-            </p>
-          </div>
-        </div>
-
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2409.03684">
-            Predicting quantum channels over general product distributions</a></strong>
-            <br>
-            <a href="https://sitanchen.com/">Sitan Chen</a>,
-            <a href="https://jaume.dedios.cat/">Jaume de Dios Pont</a>,
-            Jun-Ting Hsieh,
-            <a href="https://hsinyuan-huang.github.io/">Hsin-Yuan Huang</a>,
-            <a href="https://people.csail.mit.edu/jlange/">Jane Lange</a>,
-            <a href="https://jerryzli.github.io/">Jerry Li</a>
-            <br>
-            <em>COLT</em>, 2025<br>
-            </p>
-          </div>
-        </div>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2405.05373">
-            Certifying Euclidean Sections and Finding Planted Sparse Vectors Beyond the sqrt(n) Dimension Threshold</a></strong>
-            <br>
-            <a href="https://people.eecs.berkeley.edu/~venkatg/">Venkatesan Guruswami</a>,
-            Jun-Ting Hsieh,
-            <a href="https://people.eecs.berkeley.edu/~prasad/">Prasad Raghavendra</a>
-            <br>
-            <em>FOCS</em>, 2024<br>
-            </p>
-          </div>
-        </div>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2302.01212">
-            Explicit two-sided unique-neighbor expanders</a></strong>
-            <br>
-            Jun-Ting Hsieh,
-            <a href="https://virtualmath1.stanford.edu/~theom/">Theo McKenzie</a>,
-            <a href="http://sidhanthm.com/">Sidhanth Mohanty</a>,
-            <a href="http://www.cs.cmu.edu/~preisben/">Pedro Paredes</a>
-            <br>
-            <em>STOC</em>, 2024<br>
-            <span class="links">
-            <a href="files/slides/stoc24.pdf">[Slides]</a> 
-            </span>
-            </p>
-          </div>
-        </div>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2401.11590">
-            Small Even Covers, Locally Decodable Codes and Restricted Subgraphs of Edge-Colored Kikuchi Graphs</a></strong>
-            <br>
-            Jun-Ting Hsieh,
-            <a href="http://praveshkkothari.org/">Pravesh K. Kothari</a>,
-            <a href="http://sidhanthm.com/">Sidhanth Mohanty</a>,
-            <a href="https://people.math.ethz.ch/~dmunha/">David Munhá Correia</a>,
-            <a href="https://people.math.ethz.ch/~sudakovb/">Benny Sudakov</a>
-            <br>
-            <em>International Mathematics Research Notices</em>, 2025<br>
-            </p>
-          </div>
-        </div>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2310.00393">
-            New SDP Roundings and Certifiable Approximation for Cubic Optimization
-            </a></strong>
-            <br>
-            Jun-Ting Hsieh,
-            <a href="http://praveshkkothari.org/">Pravesh K. Kothari</a>,
-            <a href="https://lucaspesenti.github.io/">Lucas Pesenti</a>,
-            <a href="https://lucatrevisan.github.io/">Luca Trevisan</a>
-            <br>
-            <em>SODA</em>, 2024<br>
-            </p>
-          </div>
-        </div>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2309.16897">
-            Efficient Algorithms for Semirandom Planted CSPs at the Refutation Threshold</a></strong>
-            <br>
-            <a href="https://people.eecs.berkeley.edu/~venkatg/">Venkatesan Guruswami</a>,
-            Jun-Ting Hsieh,
-            <a href="http://praveshkkothari.org/">Pravesh K. Kothari</a>,
-            <a href="https://www.math.ias.edu/~pmanohar/">Peter Manohar</a>
-            <br>
-            <em>FOCS</em>, 2023<br>
-            <span class="links">
-            <a href="files/slides/focs23.pdf">[Slides]</a> 
-            </span>
-            </p>
-          </div>
-        </div>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2307.05954">
-            Ellipsoid Fitting Up to a Constant</a></strong>
-            <br>
-            Jun-Ting Hsieh,
-            <a href="http://praveshkkothari.org/">Pravesh K. Kothari</a>,
-            <a href="http://www.potechin.org/aaronpotechin/">Aaron Potechin</a>,
-            <a href="http://www.andrew.cmu.edu/user/sichaoxu/">Jeff Xu</a>
-            <br>
-            <em>ICALP</em>, 2023<br>
-            <span class="links">
-            <a href="files/slides/icalp23_2.pdf">[Slides]</a> 
-            </span>
-            </p>
-          </div>
-        </div>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2206.09204">
-            Approximating Max-Cut on Bounded Degree Graphs: Tighter Analysis of the FKL Algorithm</a></strong>
-            <br>
-            Jun-Ting Hsieh,
-            <a href="http://praveshkkothari.org/">Pravesh K. Kothari</a>
-            <br>
-            <em>ICALP</em>, 2023<br>
-            <span class="links">
-            <a href="files/slides/icalp23.pdf">[Slides]</a> 
-            </span>
-            </p>
-          </div>
-        </div>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2207.10850">
-            A simple and sharper proof of the hypergraph Moore bound</a></strong>
-            <br>
-            Jun-Ting Hsieh,
-            <a href="http://praveshkkothari.org/">Pravesh K. Kothari</a>,
-            <a href="http://sidhanthm.com/">Sidhanth Mohanty</a>
-            <br>
-            <em>SODA</em>, 2023<br>
-            <span class="links">
-            <a href="files/slides/soda23.pdf">[Slides]</a> 
-            <a href="https://lucatrevisan.wordpress.com/2024/04/27/feiges-conjecture-and-the-magic-of-kikuchi-graphs/">[Luca Trevisan's blog post]</a> 
-            </span>
-            </p>
-          </div>
-        </div>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2208.00122">
-            Polynomial-Time Power-Sum Decomposition of Polynomials</a></strong>
-            <br>
-            <a href="https://mitalibafna.github.io/">Mitali Bafna</a>,
-            Jun-Ting Hsieh,
-            <a href="http://praveshkkothari.org/">Pravesh K. Kothari</a>,
-            <a href="http://www.andrew.cmu.edu/user/sichaoxu/">Jeff Xu</a>
-            <br>
-            <em>FOCS</em>, 2022<br>
-            <span class="links">
-            <a href="https://www.youtube.com/watch?v=--txl_ohENo">[Talk at CRM]</a> 
-            </span>
-            </p>
-          </div>
-        </div>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong><a href="https://arxiv.org/abs/2106.12710">
-            Certifying solution geometry in random CSPs: counts, clusters and balance</a></strong>
-            <br>
-            Jun-Ting Hsieh,
-            <a href="http://sidhanthm.com/">Sidhanth Mohanty</a>,
-            <a href="http://www.andrew.cmu.edu/user/sichaoxu/">Jeff Xu</a>
-            <br>
-            <em>CCC</em>, 2022<br>
-            </p>
-          </div>
-        </div>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="https://arxiv.org/abs/2110.08677">
-            Algorithmic Thresholds for Refuting Random Polynomial Systems</a></strong>
-            <br>
-            Jun-Ting Hsieh,
-            <a href="http://praveshkkothari.org/">Pravesh K. Kothari</a>
-            <br>
-            <em>SODA</em>, 2022<br>
-            </p>
-          </div>
-        </div>
-
-
-      <div class="pad"></div>
-      <h5 class="pt-2 pb-1">Previous Publications in Machine Learning</h5>
-
-        <!-- ICLR 2019 -->
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong><a href="https://arxiv.org/abs/1906.01200">
-            Learning Neural PDE Solvers with Convergence Guarantees</a></strong>
-            <!-- <span class="badge badge-danger">New!</span> -->
-            <br>
-            Jun-Ting Hsieh*,
-            Shengjia Zhao*,
-            Stephan Eismann,
-            Lucia Mirabella,
-            <a href="https://cs.stanford.edu/~ermon/">Stefano Ermon</a>
-            <br>
-            <em>ICLR</em>, 2019<br>
-            </p>
-          </div>
-        </div>
-
-        <!-- NeurIPS 2018 -->
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong><a href="https://arxiv.org/abs/1806.04166">
-            Learning to Decompose and Disentangle Representations for Video Prediction</a></strong>
-            <br>
-            Jun-Ting Hsieh,
-            <a href="https://clarabing.github.io/">Bingbin Liu</a>,
-            <a href="http://ai.stanford.edu/~dahuang/">De-An Huang</a>,
-            <a href="https://profiles.stanford.edu/fei-fei-li">Li Fei-Fei</a>,
-            <a href="http://www.niebles.net/">Juan Carlos Niebles</a>
-            <br>
-            <em>NeurIPS, </em>2018<br>
-            <span class="links">
-            <a href="https://github.com/jthsieh/DDPAE-video-prediction">Code</a> 
-            </span> </p>
-          </div>
-        </div>
-
-        <!-- ECCV 2018 -->
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong><a href="https://arxiv.org/abs/1712.00108">
-            Graph Distillation for Action Detection with Privileged Modalities</a></strong>
-            <br>
-            <a href="https://alan.vision/">Zelun Luo</a>,
-            Jun-Ting Hsieh,
-            <a href="http://www.lujiang.info/">Lu Jiang</a>,
-            <a href="http://www.niebles.net/">Juan Carlos Niebles</a>,
-            <a href="https://profiles.stanford.edu/fei-fei-li">Li Fei-Fei</a>
-            <br>
-            <em>ECCV, </em>2018<br>
-            <span class="links">
-            <a href="http://alan.vision/eccv18_graph/">Project</a> 
-            <a href="https://github.com/google/graph_distillation">Code</a> 
-            </span> </p>
-          </div>
-        </div>
-
-        <!-- MLHC 2018 -->
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong><a href="https://static1.squarespace.com/static/59d5ac1780bd5ef9c396eda6/t/5b7373254ae23704e284bdf4/1534292778467/18.pdf">
-            Computer Vision-based Descriptive Analytics of Seniors' Daily Activities for Long-term Health Monitoring</a></strong>
-            <br>
-            Jun-Ting Hsieh*,
-            <a href="https://alan.vision/">Zelun Luo</a>*,
-            Niranjan Balachandar,
-            <a href="https://ai.stanford.edu/~syyeung/">Serena Yeung</a>,
-            Guido Pusiol,
-            Jay Luxenberg,
-            Grace Li,
-            Li-Jia Li,
-            N. Lance Downing,
-            Arnold Milstein,
-            <a href="https://profiles.stanford.edu/fei-fei-li">Li Fei-Fei</a>
-            <br>
-            <em>Machine Learning for Healthcare (MLHC), </em>2018<br>
-            </p>
-          </div>
-        </div>
-
-
-      <div class="pad"></div>
-      <h5 class="pt-2 pb-1">Physical Chemistry</h5>
-
-        <!-- Science 2015 -->
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong><a href="http://science.sciencemag.org/content/347/6223/751">
-            Direct kinetic measurement of the reaction of the simplest Criegee intermediate with water vapor</a></strong>
-            <br>
-            <a href="https://okumuragroup.sites.caltech.edu/people/group-members/wen-chao">Wen Chao</a>,
-            Jun-Ting Hsieh,
-            Chun-Hung Chang,
-            <a href="https://www.iams.sinica.edu.tw/en/?link=member&id=3">Jim Jr-Min Lin</a>
-            <br>
-            <em>Science,</em> 2015. Vol. 347, Issue 6223, pp. 751-754<br>
-            </p>
-          </div>
-        </div>
-
-      <div class="pad"></div>
-      <h4>Other Writings</h4>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="files/projects/BQP.pdf">
-            Quantum Complexity Theory</a></strong>
-            <br>
-            <em>TCS Toolkit Writing Project</em>, 2020<br>
-            </p>
-          </div>
-        </div>
-
-        <div class="publication media">
-          <div class="media-body">
-            <p><strong> <a href="files/projects/Quantum_Information_Theory.pdf">
-            Quantum Information Theory</a></strong>
-            <br>
-            Jun-Ting Hsieh,
-            <a href="https://clarabing.github.io/">Bingbin Liu</a>
-            <br>
-            <em>Course project</em>, 2019<br>
-            </p>
-          </div>
-        </div>
-
-    </div>
-
-    </div>
-    </div>
-
-
-      <!-- ####################### Awards ####################### -->
-
-        <!--
-        <div class="row mb-3">
-            <div class="col-12 pt-3  px-4 pb-4   bubble offset-xl-1 col-xl-10">
-            <h4> Awards </h4>
-            <ul id="news">
-            <li><div>
-            <span>Frederick Emmons Terman Engineering Scholastic Award</span> 
-            <em>2017</em>
-            </div></li>
-
-            <li><div>
-            <span>Phi Beta Kappa Honor Society Member</span> 
-            <em>2017</em>
-            </div></li>
-
-            <li><div>
-            <span>Stanford President’s Award for Academic Excellence in the Freshman Year</span> 
-            <em>2014</em>
-            </div></li>
-
-            <li><div>
-            <span>Gold Medalist at <a href="http://www.ipho2012.ee/gold-medalists/">International Physics Olympiad (IPhO)</a>, 8th overall</span> 
-            <em>2012</em>
-            </div></li>
-
-            <li><div>
-            <span>Gold Medalist at Asian Physics Olympiad (APhO), 10th overall</span> 
-            <em>2012</em>
-            </div></li>
-
-            </ul>
-
-          </div>
-        </div>
-        -->
-
-
-
-    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-
-
-
+            // --- SCROLL SPY ---
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active', 'text-gray-900');
+                            link.classList.add('text-gray-600');
+                        });
+                        const id = entry.target.getAttribute('id');
+                        const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active', 'text-gray-900');
+                            activeLink.classList.remove('text-gray-600');
+                        }
+                    }
+                });
+            }, { rootMargin: '-20% 0px -60% 0px' });
+            sections.forEach(section => observer.observe(section));
+        });
+    </script>
 </body>
-
 </html>
-
-
-
