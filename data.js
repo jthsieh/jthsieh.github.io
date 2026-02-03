@@ -60,7 +60,7 @@ const recentPublications = [
         title: "Rigorous Implications of the Low-Degree Heuristic",
         url: "https://arxiv.org/abs/2601.05850",
         authors: ["Jun-Ting Hsieh", people.DanielMKane, people.PraveshKKothari, people.JerryLi, people.SidhanthMohanty, people.StefanTiegel],
-        venue: "Preprint, 2026"
+        venue: "STOC, 2026"
     },
     {
         title: "Coloring 3-Colorable Graphs with Low Threshold Rank",
