@@ -2,6 +2,7 @@
 // Define co-authors here once to reuse across papers.
 const people = {
     SidhanthMohanty: { name: "Sidhanth Mohanty", url: "http://sidhanthm.com/" },
+    RohanGoyal: { name: "Rohan Goyal", url: "https://goyal-rohan.github.io/" },
     RachelYunZhang: { name: "Rachel Yun Zhang", url: "https://www.rachelyunzhang.com/" },
     PraveshKKothari: { name: "Pravesh K. Kothari", url: "http://praveshkkothari.org/" },
     DanielMKane: { name: "Daniel M. Kane", url: "https://cseweb.ucsd.edu/~dakane/" },
@@ -51,17 +52,26 @@ const people = {
 // --- PUBLICATION DATA ---
 const recentPublications = [
     {
+        title: "Explicit Constant-Alphabet Subspace Design Codes",
+        url: "https://arxiv.org/abs/2604.15218",
+        authors: [people.RohanGoyal, people.VenkatGuruswami, "Jun-Ting Hsieh"],
+        venue: "Preprint, 2026"
+    },
+
+    {
         title: "Explicit Almost-Optimal ε-Balanced Codes via Free Expander Walks",
         url: "https://arxiv.org/abs/2601.12606",
         authors: ["Jun-Ting Hsieh", people.SidhanthMohanty, people.RachelYunZhang],
         venue: "Preprint, 2026"
     },
+
     {
         title: "Rigorous Implications of the Low-Degree Heuristic",
         url: "https://arxiv.org/abs/2601.05850",
         authors: ["Jun-Ting Hsieh", people.DanielMKane, people.PraveshKKothari, people.JerryLi, people.SidhanthMohanty, people.StefanTiegel],
         venue: "STOC, 2026"
     },
+
     {
         title: "Coloring 3-Colorable Graphs with Low Threshold Rank",
         url: "https://arxiv.org/abs/2508.03093",
@@ -69,6 +79,7 @@ const recentPublications = [
         venue: "SODA, 2026",
         // extraLink: { text: "[Slides]", url: "files/slides/soda26.pdf" }
     },
+
     {
         title: "Sparsifying Cayley Graphs on Every Group",
         url: "https://www.arxiv.org/abs/2508.08078",
