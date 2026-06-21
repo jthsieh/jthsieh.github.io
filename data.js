@@ -90,7 +90,7 @@ const recentPublications = [
         title: "Solving Random Planted CSPs below the n^{k/2} Threshold",
         url: "https://arxiv.org/abs/2507.10833",
         authors: [people.ArponBasu, "Jun-Ting Hsieh", people.AndrewDLin, people.PeterManohar],
-        venue: "Preprint, 2025"
+        venue: "ICALP, 2026"
     },
     {
         title: "Explicit Lossless Vertex Expanders",
