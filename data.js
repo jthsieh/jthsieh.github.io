@@ -55,14 +55,14 @@ const recentPublications = [
         title: "Explicit Constant-Alphabet Subspace Design Codes",
         url: "https://arxiv.org/abs/2604.15218",
         authors: [people.RohanGoyal, people.VenkatGuruswami, "Jun-Ting Hsieh"],
-        venue: "Preprint, 2026"
+        venue: "FOCS, 2026"
     },
 
     {
         title: "Explicit Almost-Optimal ε-Balanced Codes via Free Expander Walks",
         url: "https://arxiv.org/abs/2601.12606",
         authors: ["Jun-Ting Hsieh", people.SidhanthMohanty, people.RachelYunZhang],
-        venue: "Preprint, 2026"
+        venue: "FOCS, 2026"
     },
 
     {
