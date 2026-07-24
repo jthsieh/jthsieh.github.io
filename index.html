@@ -240,6 +240,9 @@
                 }).join(", ");
 
                 let awardHtml = paper.award ? `<span class="text-yellow-800 font-bold ml-2">${paper.award}</span>` : '';
+                // Render journal alongside or below venue if present
+                let journalHtml = paper.journal ? `<span class="block font-normal text-gray-600">${paper.journal}</span>` : '';
+
                 let extraHtml = '';
                 
                 if (paper.extraLink2) {
@@ -262,6 +265,7 @@
                         </p>
                         <p class="text-base text-gray-500 mt-1 italic">
                             ${paper.venue} ${awardHtml}
+                            ${journalHtml}
                         </p>
                         ${extraHtml}
                     </div>

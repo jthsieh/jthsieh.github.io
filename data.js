@@ -136,7 +136,8 @@ const recentPublications = [
         title: "Certifying Euclidean Sections and Finding Planted Sparse Vectors Beyond the sqrt(n) Dimension Threshold",
         url: "https://arxiv.org/abs/2405.05373",
         authors: [people.VenkatGuruswami, "Jun-Ting Hsieh", people.PrasadRaghavendra], 
-        venue: "FOCS, 2024"
+        venue: "FOCS, 2024",
+        journal: "SIAM Journal on Computing, 2026"
     },
     {
         title: "Explicit two-sided unique-neighbor expanders",
