@@ -1,0 +1,16 @@
+[
+  {
+    "slug": "improved-mrrw",
+    "title": "Rate Upper Bounds for Binary Codes II: the Improved Bound",
+    "date": "2026-09-08",
+    "description": "My interpretation of OpenAI's improvement on the MRRW bound."
+  },
+
+  {
+    "slug": "mrrw-bound",
+    "title": "Rate Upper Bounds for Binary Codes I: the MRRW Bound",
+    "date": "2026-09-08",
+    "description": "A proof of the first McEliece-Rodemich-Rumsey-Welch (MRRW) bound."
+  }
+
+]

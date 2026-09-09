@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog | Jun-Ting (Tim) Hsieh</title>
+    <meta name="description" content="Blog posts by Jun-Ting (Tim) Hsieh.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22rgb(59, 130, 246)%22/><text x=%2250%22 y=%2255%22 font-family=%22Arial, sans-serif%22 font-weight=%22bold%22 font-size=%2245%22 fill=%22white%22 text-anchor=%22middle%22>JH</text></svg>">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="site-header-inner">
+            <div class="brand">
+                <a class="brand-name" href="../index.html">Jun-Ting (Tim) Hsieh</a>
+                <span class="brand-section">/ Blog</span>
+            </div>
+            <nav class="site-nav" aria-label="Blog navigation">
+                <a href="../index.html">Home</a>
+                <a href="./" aria-current="page">Blog</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page blog-home">
+        <h1 class="blog-title">Tim's Blog</h1>
+
+        <div class="blog-description">
+            <blockquote class="blog-quote">
+                <p>
+                    "I consider a mathematical proof to be <em>understood</em> if one can see it as a series of inevitable steps."
+                </p>
+                <footer>- Luca Trevisan</footer>
+            </blockquote>
+
+            <p>
+                This blog contains informal notes about theoretical computer science, math, and other things I find interesting. My goal is <em>human understanding</em>, such that each step is easy to follow (at least for readers with a background similar to mine). Everything here is written by me, not AI.
+            </p>
+
+        </div>
+
+        <section id="post-list" class="post-list" aria-live="polite">
+            <p class="status">Loading posts...</p>
+        </section>
+    </main>
+
+    <script>
+        const list = document.getElementById('post-list');
+
+        function formatDate(isoDate) {
+            return new Intl.DateTimeFormat('en-US', {
+                year: 'numeric', month: 'long', day: 'numeric'
+            }).format(new Date(`${isoDate}T12:00:00`));
+        }
+
+        fetch('posts.json')
+            .then(response => {
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                return response.json();
+            })
+            .then(posts => {
+                posts.sort((a, b) => b.date.localeCompare(a.date));
+                list.innerHTML = posts.map(post => `
+                    <article class="post-card">
+                        <h2><a href="post.html?slug=${encodeURIComponent(post.slug)}">${post.title}</a></h2>
+                        <p>${post.description}</p>
+                        <div class="post-meta">${formatDate(post.date)}</div>
+                    </article>
+                `).join('');
+            })
+            .catch(error => {
+                console.error(error);
+                list.innerHTML = '<p class="error">Could not load the post index.</p>';
+            });
+    </script>
+</body>
+</html>
