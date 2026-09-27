@@ -46,8 +46,14 @@
         </article>
 
         <aside id="toc" class="toc" aria-label="Table of contents" hidden>
-            <div class="toc-title">Outline</div>
-            <nav id="toc-links"></nav>
+            <button id="toc-toggle" class="toc-toggle" type="button" aria-label="Hide outline" title="Hide outline">
+                >
+            </button>
+
+            <div id="toc-body">
+                <div class="toc-title">Outline</div>
+                <nav id="toc-links"></nav>
+            </div>
         </aside>
     </main>
 
@@ -180,6 +186,23 @@
             headings.forEach(heading => observer.observe(heading));
         }
 
+        function setupTocToggle() {
+            const toc = document.getElementById('toc');
+            const button = document.getElementById('toc-toggle');
+            const layout = document.querySelector('.post-layout');
+
+            button.addEventListener('click', () => {
+                const collapsed = toc.classList.toggle('collapsed');
+                layout.classList.toggle('toc-hidden', collapsed);
+
+                button.textContent = collapsed ? '<' : '>';
+
+                const label = collapsed ? 'Show outline' : 'Hide outline';
+                button.setAttribute('aria-label', label);
+                button.setAttribute('title', label);
+            });
+        }
+
         async function loadPost() {
             const params = new URLSearchParams(window.location.search);
             const slug = params.get('slug');
@@ -220,6 +243,7 @@
                 `;
 
                 buildToc(article);
+                setupTocToggle();
 
                 if (window.MathJax?.typesetPromise) {
                     await MathJax.typesetPromise([article, document.getElementById('toc')]);

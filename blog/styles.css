@@ -429,6 +429,67 @@ a:hover {
     font-size: 0.82rem;
 }
 
+.toc-toggle {
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    margin: 0 0 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    background: var(--surface);
+    color: var(--muted);
+
+    font: inherit;
+    font-size: 1.15rem;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.toc-toggle:hover {
+    background: #f3f4f6;
+    color: var(--text);
+}
+
+/* Hide the outline contents but leave the button visible */
+.toc.collapsed #toc-body {
+    display: none;
+}
+
+.toc.collapsed {
+    border-left: none;
+    padding-left: 0;
+}
+
+.post-layout.toc-hidden {
+    /* Keep a zero-width second column so the toggle stays attached to
+       the centered article instead of the browser edge. */
+    grid-template-columns: minmax(0, 760px) 0;
+    gap: 0;
+    justify-content: center;
+}
+
+.post-layout.toc-hidden .toc {
+    position: sticky;
+    top: 92px;
+    width: 0;
+    min-width: 0;
+    max-height: none;
+    overflow: visible;
+    padding-left: 0;
+    border-left: none;
+}
+
+.post-layout.toc-hidden .toc-toggle {
+    margin-left: 14px;
+    white-space: nowrap;
+}
+
+
 .back-link {
     display: inline-block;
     margin-top: 44px;
