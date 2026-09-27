@@ -20,6 +20,13 @@
     --exercise-border: #93c5fd;
     --exercise-accent: #2563eb;
     --exercise-title-bg: #dbeafe;
+
+    /* Theorem box colors */
+    --theorem-text: #000000;
+    --theorem-bg: #eff6ff;
+    --theorem-border: #93c5fd;
+    --theorem-accent: #2563eb;
+    --theorem-title-bg: #dbeafe;
 }
 
 * {
@@ -93,7 +100,7 @@ a:hover {
 }
 
 .page {
-    max-width: 1180px;
+    max-width: 1280px;
     margin: 0 auto;
     padding: 56px 24px 96px;
 }
@@ -180,7 +187,7 @@ a:hover {
 
 .post-layout {
     display: grid;
-    grid-template-columns: minmax(0, 760px) 230px;
+    grid-template-columns: minmax(0, 760px) 280px;
     justify-content: center;
     gap: 64px;
     align-items: start;
@@ -293,6 +300,8 @@ a:hover {
 }
 
 .article-content img {
+    display: block;
+    margin: 1.5em auto;
     max-width: 100%;
 }
 
@@ -321,7 +330,8 @@ a:hover {
    > ...
 */
 .article-content blockquote.notebox,
-.article-content blockquote.exercisebox {
+.article-content blockquote.exercisebox,
+.article-content blockquote.theorembox {
     margin: 1.5em auto;
     padding: 0.85em 1em 0.9em;
     border-radius: 8px;
@@ -343,8 +353,17 @@ a:hover {
     border-left: 4px solid var(--exercise-accent);
 }
 
+.article-content blockquote.theorembox {
+    color: var(--theorem-text);
+    background: var(--theorem-bg);
+    border: 1px solid var(--theorem-border);
+    border-left: 4px solid var(--theorem-accent);
+}
+
+
 .article-content blockquote.notebox .admonition-title,
-.article-content blockquote.exercisebox .admonition-title {
+.article-content blockquote.exercisebox .admonition-title,
+.article-content blockquote.theorembox .admonition-title {
     margin: -0.85em -1em 0.8em !important;
     padding: 0.55em 1em;
     font-weight: 800;
@@ -358,8 +377,13 @@ a:hover {
     background: var(--exercise-title-bg);
 }
 
+.article-content blockquote.theorembox .admonition-title {
+    background: var(--theorem-title-bg);
+}
+
 .article-content blockquote.notebox > :last-child,
-.article-content blockquote.exercisebox > :last-child {
+.article-content blockquote.exercisebox > :last-child,
+.article-content blockquote.theorembox > :last-child {
     margin-bottom: 0;
 }
 

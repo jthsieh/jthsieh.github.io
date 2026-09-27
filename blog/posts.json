@@ -1,5 +1,12 @@
 [
   {
+    "slug": "lossless-expanders",
+    "title": "Explicit Lossless Vertex Expanders",
+    "date": "2025-06-30",
+    "description": "Our construction of lossless expanders via the tripartite line product."
+  },
+
+  {
     "slug": "improved-mrrw",
     "title": "Rate Upper Bounds for Binary Codes II: the Improved Bound",
     "date": "2026-09-08",

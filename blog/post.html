@@ -119,12 +119,28 @@
                 const first = box.firstElementChild;
                 if (!first || first.tagName !== 'P') return;
 
-                const match = first.textContent.trim().match(/^\[!(NOTE|EXERCISE)\](?:\s+(.*))?$/i);
+                const match = first.textContent.trim()
+                    .match(/^\[!(NOTE|EXERCISE|THEOREM)\](?:\s+(.*))?$/i);
+
                 if (!match) return;
 
                 const type = match[1].toLowerCase();
-                const title = match[2]?.trim() || (type === 'note' ? 'Note' : 'Exercise');
-                box.classList.add(type === 'note' ? 'notebox' : 'exercisebox');
+
+                const defaultTitles = {
+                    note: 'Note',
+                    exercise: 'Exercise',
+                    theorem: 'Theorem'
+                };
+
+                const classes = {
+                    note: 'notebox',
+                    exercise: 'exercisebox',
+                    theorem: 'theorembox'
+                };
+
+                const title = match[2]?.trim() || defaultTitles[type];
+
+                box.classList.add(classes[type]);
                 first.classList.add('admonition-title');
                 first.textContent = title;
             });
