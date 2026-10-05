@@ -80,11 +80,17 @@ $$\left\langle z,\mathbf{1} \right\rangle \cdot H(z) = \frac{1}{n} \sum_{i\in [n
 
 We want every Fourier coefficient of $(\left\langle z,\mathbf{1} \right\rangle - \lambda) \cdot H(z)$ to be PSD. $$C_S := \frac{1}{n} \sum_{i \in [n]} B_{S\Delta \{i\}} \succeq \lambda \cdot B_S , \quad \forall S \subseteq [n] .$$ Note that for the boundary terms (outside the support of $H$), this is automatic because $B_S = 0$ and $C_S \succeq 0$.
 
-**Why does this give an improvement?** We can already get a glimpse of where the improvement comes from. In the end, we will need to compare the two quantities: $\mathbb{E}_{\mathbf{z}} \|H(\mathbf{z})\|_F^2$ where $\mathbf{z}\sim \{\pm1\}^n$, and $\|H(\mathbf{1})\|_F^2$. $$\mathbb{E}_{\mathbf{z}} \|H(\mathbf{z})\|_F^2 = \sum_{|S|\leq t} \|B_S\|_F^2 ,$$ and $$\|H(\mathbf{1})\|_F^2 = \left\|\sum_{|S|\leq t} B_S\right\|_F^2 \leq N \sum_{|S| \leq t} \|B_S\|_F^2 ,$$ where $N = \sum_{\ell=0}^t \binom{n}{\ell}$. Thus, using Cauchy-Schwarz directly, we get a ratio of at most $N$ between the two. If we simply use this, it would be essentially the same as MRRW, as there is no real difference between matrix-valued and scalar-valued coefficients.
+## Why does this give an improvement?
+We can already get a glimpse of where the improvement comes from. In the end, we will get a bound $$A_2(n,\delta n) \leq \frac{f(\mathbf{1})}{\mathbb{E}[f]} \leq \frac{1-\rho}{\lambda-\rho}\cdot \frac{\|H(\mathbf{1})\|_F^2}{\mathbb{E}_{\mathbf{z}} \|H(\mathbf{z})\|_F^2} = \frac{1-\rho}{\lambda-\rho}\cdot \frac{\|\sum_S B_S\|_F^2}{\sum_S \|B_S\|_F^2}.$$
 
-However, suppose each $B_S$ is rank $1$, and $\sum_{S} B_S \propto I$ (by symmetry of the construction), then we have $\|B_S\|_F^2 = \operatorname{tr}(B_S)^2$, and $$\mathbb{E}_{\mathbf{z}} \|H(\mathbf{z})\|_F^2 = \sum_{|S|\leq t} \operatorname{tr}(B_S)^2
+Since we cap the degree at $t$, we have $N = \sum_{\ell=0}^t \binom{n}{\ell}$ many terms.
+Using Cauchy-Schwarz, we have $$\left\|\sum_{|S|\leq t} B_S\right\|_F^2 \leq N \sum_{|S| \leq t} \|B_S\|_F^2 ,$$ which gives a ratio of $N$.
+If we simply use this, it would be essentially the same as MRRW, as there is no real difference between matrix-valued and scalar-valued coefficients.
+
+**Improvement:**
+Suppose each $B_S \in \mathbb{R}^{r \times r}$ is rank $1$, and $\sum_{S} B_S \propto I_r$ (by symmetry of the construction), then we have $\|B_S\|_F^2 = \operatorname{tr}(B_S)^2$, and $$\sum_{|S|\leq t} \operatorname{tr}(B_S)^2
     \geq N^{-1} \left(\operatorname{tr} \sum_{|S|\leq t} B_S\right)^2
-    = \frac{r}{N} \left\|\sum_{|S|\leq t} B_S\right\|_F^2 .$$ This gives a ratio of at most $N/r$, saving an extra factor of $r$!
+    = \frac{r}{N} \left\|\sum_{|S|\leq t} B_S\right\|_F^2 .$$ This gives a ratio of at most $\frac{N}{r}$, saving an extra factor of $r$!
 
 ## Designing $H$
 
