@@ -49,10 +49,24 @@ const people = {
     ChunHungChang: { name: "Chun-Hung Chang", url: null }
 };
 
+// --- PUBLICATION METADATA ---
+// Every paper has these editable fields:
+//   year: 2026,                         // used to sort newest to oldest
+//   selected: true,                     // shown in "Selected publications" if true
+//   categories: ["coding-theory"],     // can include multiple categories
+// Available categories:
+//   "explicit-construction", "coding-theory", "algorithms", "average-case-complexity"
+// Use categories: [] for papers with no subject category. Every paper still
+// appears in "All publications", even if it is not selected or categorized.
+// Example: categories: ["explicit-construction", "coding-theory"]
+
 // --- PUBLICATION DATA ---
 const recentPublications = [
     {
         title: "Explicit Constant-Alphabet Subspace Design Codes",
+        year: 2026,
+        selected: true,
+        categories: ["explicit-construction", "coding-theory"],
         url: "https://arxiv.org/abs/2604.15218",
         authors: [people.RohanGoyal, people.VenkatGuruswami, "Jun-Ting Hsieh"],
         venue: "FOCS, 2026"
@@ -60,6 +74,9 @@ const recentPublications = [
 
     {
         title: "Explicit Almost-Optimal ε-Balanced Codes via Free Expander Walks",
+        year: 2026,
+        selected: true,
+        categories: ["explicit-construction", "coding-theory"],
         url: "https://arxiv.org/abs/2601.12606",
         authors: ["Jun-Ting Hsieh", people.SidhanthMohanty, people.RachelYunZhang],
         venue: "FOCS, 2026"
@@ -67,6 +84,9 @@ const recentPublications = [
 
     {
         title: "Rigorous Implications of the Low-Degree Heuristic",
+        year: 2026,
+        selected: true,
+        categories: ["average-case-complexity"],
         url: "https://arxiv.org/abs/2601.05850",
         authors: ["Jun-Ting Hsieh", people.DanielMKane, people.PraveshKKothari, people.JerryLi, people.SidhanthMohanty, people.StefanTiegel],
         venue: "STOC, 2026"
@@ -74,6 +94,9 @@ const recentPublications = [
 
     {
         title: "Coloring 3-Colorable Graphs with Low Threshold Rank",
+        year: 2026,
+        selected: true,
+        categories: ["algorithms"],
         url: "https://arxiv.org/abs/2508.03093",
         authors: ["Jun-Ting Hsieh"],
         venue: "SODA, 2026",
@@ -82,126 +105,201 @@ const recentPublications = [
 
     {
         title: "Sparsifying Cayley Graphs on Every Group",
+        year: 2026,
+        selected: false,
+        categories: ["graph-theory"],
         url: "https://www.arxiv.org/abs/2508.08078",
         authors: ["Jun-Ting Hsieh", people.DanielZLee, people.SidhanthMohanty, people.AaronPutterman, people.RachelYunZhang],
         venue: "SODA, 2026"
     },
+
     {
         title: "Solving Random Planted CSPs below the n^{k/2} Threshold",
+        year: 2026,
+        selected: false,
+        categories: ["average-case-complexity"],
         url: "https://arxiv.org/abs/2507.10833",
         authors: [people.ArponBasu, "Jun-Ting Hsieh", people.AndrewDLin, people.PeterManohar],
         venue: "ICALP, 2026"
     },
+
     {
         title: "Explicit Lossless Vertex Expanders",
+        year: 2025,
+        selected: true,
+        categories: ["explicit-construction"],
         url: "https://arxiv.org/abs/2504.15087",
         authors: ["Jun-Ting Hsieh", people.AlexLubotzky, people.SidhanthMohanty, people.AssafReiner, people.RachelYunZhang],
         venue: "FOCS, 2025",
         award: "Best Paper Award",
-        extraLink: { text: "[CMU blog]", url: "https://www.cs.cmu.edu/~csd-phd-blog/2025/lossless-expanders/" }
+        extraLink: { text: "[Blog post]", url: "blog/post.html?slug=lossless-expanders" }
     },
+
     {
         title: "The Quasi-Polynomial Low-Degree Conjecture is False",
+        year: 2025,
+        selected: true,
+        categories: ["average-case-complexity"],
         url: "https://arxiv.org/abs/2505.17360",
         authors: [people.RaresDariusBuhai, "Jun-Ting Hsieh", people.AayushJain, people.PraveshKKothari],
         venue: "FOCS, 2025"
     },
+
     {
         title: "Improved Lower Bounds for all Odd-Query Locally Decodable Codes",
+        year: 2025,
+        selected: false,
+        categories: ["coding-theory"],
         url: "https://arxiv.org/abs/2411.14361",
         authors: [people.ArponBasu, "Jun-Ting Hsieh", people.PraveshKKothari, people.AndrewDLin],
         venue: "FOCS, 2025"
     },
+
     {
         title: "Explicit Two-Sided Vertex Expanders Beyond the Spectral Barrier",
+        year: 2025,
+        selected: true,
+        categories: ["explicit-construction"],
         url: "https://arxiv.org/abs/2411.11627",
         authors: ["Jun-Ting Hsieh", people.TingChunLin, people.SidhanthMohanty, people.RyanODonnell, people.RachelYunZhang],
         venue: "STOC, 2025",
         award: "Invited to SICOMP Special Issue"
     },
+
     {
         title: "Rounding Large Independent Sets on Expanders",
+        year: 2025,
+        selected: false,
+        categories: ["algorithms"],
         url: "https://arxiv.org/abs/2405.10238",
         authors: [people.MitaliBafna, "Jun-Ting Hsieh", people.PraveshKKothari],
         venue: "STOC, 2025",
         extraLink: { text: "[Talk at IAS]", url: "https://www.ias.edu/video/rounding-large-independent-sets-expanders" }
     },
+
     {
         title: "Predicting quantum channels over general product distributions",
+        year: 2025,
+        selected: false,
+        categories: ["average-case-complexity"],
         url: "https://arxiv.org/abs/2409.03684",
         authors: [people.SitanChen, people.JaumeDeDiosPont, "Jun-Ting Hsieh", people.HsinYuanHuang, people.JaneLange, people.JerryLi],
         venue: "COLT, 2025"
     },
+
     {
         title: "Certifying Euclidean Sections and Finding Planted Sparse Vectors Beyond the sqrt(n) Dimension Threshold",
+        year: 2024,
+        selected: false,
+        categories: ["average-case-complexity"],
         url: "https://arxiv.org/abs/2405.05373",
         authors: [people.VenkatGuruswami, "Jun-Ting Hsieh", people.PrasadRaghavendra], 
         venue: "FOCS, 2024",
         journal: "SIAM Journal on Computing, 2026"
     },
+
     {
         title: "Explicit two-sided unique-neighbor expanders",
+        year: 2024,
+        selected: false,
+        categories: ["explicit-construction", "graph-theory"],
         url: "https://arxiv.org/abs/2302.01212",
         authors: ["Jun-Ting Hsieh", people.TheoMcKenzie, people.SidhanthMohanty, people.PedroParedes],
         venue: "STOC, 2024",
         extraLink: { text: "[Slides]", url: "files/slides/stoc24.pdf" }
     },
+
     {
         title: "Small Even Covers, Locally Decodable Codes and Restricted Subgraphs of Edge-Colored Kikuchi Graphs",
+        year: 2025,
+        selected: false,
+        categories: ["coding-theory", "graph-theory"],
         url: "https://arxiv.org/abs/2401.11590",
         authors: ["Jun-Ting Hsieh", people.PraveshKKothari, people.SidhanthMohanty, people.DavidMunhaCorreia, people.BennySudakov],
         venue: "International Mathematics Research Notices, 2025"
     },
+
     {
         title: "New SDP Roundings and Certifiable Approximation for Cubic Optimization",
+        year: 2024,
+        selected: false,
+        categories: ["algorithms"],
         url: "https://arxiv.org/abs/2310.00393",
         authors: ["Jun-Ting Hsieh", people.PraveshKKothari, people.LucasPesenti, people.LucaTrevisan],
         venue: "SODA, 2024"
     },
+
     {
         title: "Efficient Algorithms for Semirandom Planted CSPs at the Refutation Threshold",
+        year: 2023,
+        selected: false,
+        categories: ["algorithms", "average-case-complexity"],
         url: "https://arxiv.org/abs/2309.16897",
         authors: ["Venkatesan Guruswami", "Jun-Ting Hsieh", people.PraveshKKothari, people.PeterManohar],
         venue: "FOCS, 2023",
         extraLink: { text: "[Slides]", url: "files/slides/focs23.pdf" }
     },
+
     {
         title: "Ellipsoid Fitting Up to a Constant",
+        year: 2023,
+        selected: false,
+        categories: ["average-case-complexity"],
         url: "https://arxiv.org/abs/2307.05954",
         authors: ["Jun-Ting Hsieh", people.PraveshKKothari, people.AaronPotechin, people.JeffXu],
         venue: "ICALP, 2023",
         extraLink: { text: "[Slides]", url: "files/slides/icalp23_2.pdf" }
     },
+
     {
         title: "Approximating Max-Cut on Bounded Degree Graphs: Tighter Analysis of the FKL Algorithm",
+        year: 2023,
+        selected: false,
+        categories: ["algorithms"],
         url: "https://arxiv.org/abs/2206.09204",
         authors: ["Jun-Ting Hsieh", people.PraveshKKothari],
         venue: "ICALP, 2023",
         extraLink: { text: "[Slides]", url: "files/slides/icalp23.pdf" }
     },
+
     {
         title: "A simple and sharper proof of the hypergraph Moore bound",
+        year: 2023,
+        selected: false,
+        categories: ["algorithms", "average-case-complexity", "graph-theory"],
         url: "https://arxiv.org/abs/2207.10850",
         authors: ["Jun-Ting Hsieh", people.PraveshKKothari, people.SidhanthMohanty],
         venue: "SODA, 2023",
         extraLink: { text: "[Slides]", url: "files/slides/soda23.pdf" },
         extraLink2: { text: "[Luca Trevisan's blog post]", url: "https://lucatrevisan.wordpress.com/2024/04/27/feiges-conjecture-and-the-magic-of-kikuchi-graphs/" }
     },
+
     {
         title: "Polynomial-Time Power-Sum Decomposition of Polynomials",
+        year: 2022,
+        selected: false,
+        categories: ["average-case-complexity"],
         url: "https://arxiv.org/abs/2208.00122",
         authors: [people.MitaliBafna, "Jun-Ting Hsieh", people.PraveshKKothari, people.JeffXu],
         venue: "FOCS, 2022",
         extraLink: { text: "[Talk at CRM]", url: "https://www.youtube.com/watch?v=--txl_ohENo" }
     },
+
     {
         title: "Certifying solution geometry in random CSPs: counts, clusters and balance",
+        year: 2022,
+        selected: false,
+        categories: ["average-case-complexity"],
         url: "https://arxiv.org/abs/2106.12710",
         authors: ["Jun-Ting Hsieh", people.SidhanthMohanty, people.JeffXu],
         venue: "CCC, 2022"
     },
+
     {
         title: "Algorithmic Thresholds for Refuting Random Polynomial Systems",
+        year: 2022,
+        selected: false,
+        categories: ["average-case-complexity"],
         url: "https://arxiv.org/abs/2110.08677",
         authors: ["Jun-Ting Hsieh", people.PraveshKKothari],
         venue: "SODA, 2022"
@@ -211,12 +309,18 @@ const recentPublications = [
 const mlPublications = [
     {
         title: "Learning Neural PDE Solvers with Convergence Guarantees",
+        year: 2019,
+        selected: false,
+        categories: [],
         url: "https://arxiv.org/abs/1906.01200",
         authors: ["Jun-Ting Hsieh*", people.ShengjiaZhao, people.StephanEismann, people.LuciaMirabella, people.StefanoErmon],
         venue: "ICLR, 2019"
     },
     {
         title: "Learning to Decompose and Disentangle Representations for Video Prediction",
+        year: 2018,
+        selected: false,
+        categories: [],
         url: "https://arxiv.org/abs/1806.04166",
         authors: ["Jun-Ting Hsieh", people.BingbinLiu, people.DeAnHuang, people.LiFeiFei, people.JuanCarlosNiebles],
         venue: "NeurIPS, 2018",
@@ -224,6 +328,9 @@ const mlPublications = [
     },
     {
         title: "Graph Distillation for Action Detection with Privileged Modalities",
+        year: 2018,
+        selected: false,
+        categories: [],
         url: "https://arxiv.org/abs/1712.00108",
         authors: [people.ZelunLuo, "Jun-Ting Hsieh", people.LuJiang, people.JuanCarlosNiebles, people.LiFeiFei],
         venue: "ECCV, 2018",
@@ -234,6 +341,9 @@ const mlPublications = [
 const chemPublications = [
     {
         title: "Direct kinetic measurement of the reaction of the simplest Criegee intermediate with water vapor",
+        year: 2015,
+        selected: false,
+        categories: [],
         url: "http://science.sciencemag.org/content/347/6223/751",
         authors: [people.WenChao, "Jun-Ting Hsieh", people.ChunHungChang, people.JimJrMinLin],
         venue: "Science, 2015"

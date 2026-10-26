@@ -1,62 +1,15 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Jun-Ting (Tim) Hsieh</title>
-    <meta name="description" content="Personal website of Jun-Ting (Tim) Hsieh, C.L.E. Moore Instructor of Mathematics at MIT.">
-    
-    <!-- FAVICON: Initials "JH" in a blue circle matching your theme -->
+    <meta name="description" content="Personal website of Jun-Ting (Tim) Hsieh.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2250%22 fill=%22rgb(59, 130, 246)%22/><text x=%2250%22 y=%2255%22 font-family=%22Arial, sans-serif%22 font-weight=%22bold%22 font-size=%2245%22 fill=%22white%22 text-anchor=%22middle%22>JH</text></svg>">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- FontAwesome for Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700&display=swap" rel="stylesheet">
-
-    <style>
-        /* --- COLOR CONFIGURATION --- */
-        :root {
-            /* Blue color similar to original Bootstrap primary or custom choice */
-            --main-rgb: 59, 130, 246; 
-        }
-
-        body {
-            font-family: 'Nunito', sans-serif;
-        }
-
-        /* Custom Text Color Class */
-        .text-primary {
-            color: rgb(var(--main-rgb));
-            transition: opacity 0.2s;
-        }
-        .text-primary:hover {
-            opacity: 0.75; 
-        }
-
-        /* Custom Border Color Class */
-        .border-primary {
-            border-color: rgb(var(--main-rgb));
-        }
-        
-        /* Sidebar Link Active State */
-        .nav-link.active {
-            background-color: #e2e8f0; /* slate-200 */
-            color: #1a202c; /* gray-900 */
-            font-weight: 700;
-            border-right: 4px solid rgb(var(--main-rgb)); 
-        }
-        
-        /* Offset for anchor links so headers aren't hidden behind margins */
-        section {
-            scroll-margin-top: 2rem;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site.css">
+    <script src="data.js" defer></script>
+    <script src="site.js" defer></script>
 
     <!-- Google Analytics (Preserved from source) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149663662-1"></script>
@@ -67,264 +20,115 @@
         gtag('config', 'UA-149663662-1');
     </script>
 </head>
-
-<body class="bg-gray-50 text-gray-800 flex flex-col md:flex-row min-h-screen">
-
-    <!-- LEFT SIDEBAR (Sticky) -->
-    <aside class="w-full md:w-96 bg-white shadow-lg flex-shrink-0 flex flex-col z-20 md:h-screen md:sticky md:top-0">
-        <div class="p-8 flex flex-col items-center text-center overflow-y-auto">
-            
-            <!-- Profile Image Container -->
-            <div class="relative w-40 h-40 mb-6 rounded-full overflow-hidden border-4 border-gray-100 shadow-sm flex-shrink-0">
-                <img id="profile-pic" 
-                     src="files/tim.jpg" 
-                     alt="Jun-Ting (Tim) Hsieh" 
-                     class="w-full h-full object-cover transition-opacity duration-500 ease-in-out"
-                     onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Tim+Hsieh&size=256&background=random';">
+<body data-page="home">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <!-- The same sidebar is included on all three pages, including without JavaScript. -->
+    <aside class="sidebar">
+        <div class="sidebar-inner">
+            <div class="profile-photo">
+                <span class="profile-initials" aria-hidden="true">JH</span>
+                <img id="profile-pic" src="files/tim2.jpg" alt="Jun-Ting (Tim) Hsieh" width="160" height="160" onerror="this.hidden = true;">
             </div>
-
-            <!-- Name & Title -->
-            <h1 class="text-2xl font-bold text-gray-900 mb-1">Jun-Ting (Tim) Hsieh</h1>
-            <p class="text-base text-gray-600 mb-4">C.L.E. Moore Instructor of Mathematics<br>MIT</p>
-
-            <!-- Links -->
-            <div class="flex flex-wrap justify-center gap-3 text-base mb-6">
-                <!-- Add CV link if available in files/ -->
-                <!-- <a href="files/cv.pdf" target="_blank" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-700 transition">
-                    <i class="fas fa-file-alt mr-1"></i> CV
-                </a> -->
-                <a href="https://scholar.google.com/citations?hl=en&user=zYhq-BEAAAAJ&view_op=list_works&sortby=pubdate" target="_blank" class="px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-full text-gray-700 transition">
-                    <i class="fas fa-graduation-cap mr-1"></i> Google Scholar
+            <h1 class="profile-name">Jun-Ting (Tim) Hsieh</h1>
+            <p class="profile-role">C.L.E. Moore Instructor of Mathematics<br>MIT</p>
+            <div class="profile-links">
+                <a href="files/tim_CV.pdf" target="_blank" rel="noopener noreferrer" class="profile-link">
+                    <svg class="icon" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor"
+                        stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/>
+                        <path d="M14 2v6h6M8 13h8M8 17h8"/>
+                    </svg>
+                    <span>CV</span>
                 </a>
-            </div>
-            
-            <div class="text-sm text-gray-500 mb-6">
-                <i class="fas fa-envelope mr-1"></i> juntingh [at] mit [dot] edu
-            </div>
 
-            <!-- Navigation Menu -->
-            <nav class="w-full">
-                <ul class="space-y-2">
-                    <li>
-                        <a href="#about" class="nav-link active w-full text-left px-6 py-3 rounded-lg hover:bg-gray-50 transition flex items-center text-gray-600 text-lg">
-                            <i class="fas fa-user w-6 text-center mr-3 text-gray-400"></i> About
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#publications" class="nav-link w-full text-left px-6 py-3 rounded-lg hover:bg-gray-50 transition flex items-center text-gray-600 text-lg">
-                            <i class="fas fa-layer-group w-6 text-center mr-3 text-gray-400"></i> Publications
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#teaching" class="nav-link w-full text-left px-6 py-3 rounded-lg hover:bg-gray-50 transition flex items-center text-gray-600 text-lg">
-                            <i class="fas fa-chalkboard-user w-6 text-center mr-3 text-gray-400"></i> Teaching
-                        </a>
-                    </li>
-                    <li>
-                        <a href="blog/" class="w-full text-left px-6 py-3 rounded-lg hover:bg-gray-50 transition flex items-center text-gray-600 text-lg">
-                            <i class="fas fa-pen-nib w-6 text-center mr-3 text-gray-400"></i> Blog
-                        </a>
-                    </li>
+                <a href="https://scholar.google.com/citations?hl=en&amp;user=zYhq-BEAAAAJ&amp;view_op=list_works&amp;sortby=pubdate" target="_blank" rel="noopener noreferrer" class="profile-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m2 9 10-5 10 5-10 5ZM6 11v6c4 3 8 3 12 0v-6M22 9v7"/></svg><span>Google Scholar</span></a>
+            </div>
+            <div class="profile-email"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span>juntingh [at] mit [dot] edu</span></div>
+            <nav class="site-nav" aria-label="Main navigation">
+                <ul>
+                    <li><a href="index.html" class="nav-link" aria-current="page"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg><span>Home</span></a></li>
+                    <li><a href="publications.html" class="nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 10 5-10 5L2 8Z"/><path d="m2 12 10 5 10-5M2 16l10 5 10-5"/></svg><span>Publications</span></a></li>
+                    <li><a href="teaching.html" class="nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="13" rx="1"/><path d="M7 21h10M12 16v5M7 8h10M7 11h6"/></svg><span>Teaching</span></a></li>
+                    <li><a href="blog/" class="nav-link"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m16 3 5 5-12 12-6 1 1-6ZM13 6l5 5"/></svg><span>Blog</span></a></li>
                 </ul>
             </nav>
         </div>
     </aside>
 
-    <!-- RIGHT MAIN CONTENT -->
-    <main class="flex-1 p-6 md:py-12 md:pr-12 md:pl-32">
-        <div class="max-w-5xl">
-        
-            <!-- ABOUT SECTION -->
-            <section id="about" class="mb-20 pt-4">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">About Me</h2>
-                
-                <div class="prose max-w-none text-gray-700 space-y-4 text-lg">
+    <main id="main-content" class="main-content" tabindex="-1">
+        <div class="content-inner">
+            <section id="home" class="page-section home-intro" aria-labelledby="home-heading">
+                <h2 id="home-heading" class="section-heading">Home</h2>
+                <div class="biography">
                     <p>
-                        I am a <a href="https://math.mit.edu/directory/profile.html?pid=2798" class="text-primary hover:underline">C.L.E. Moore Instructor of Mathematics</a> at MIT (departmental postdoc)!
+                        Hello! 
+                        I'm Jun-Ting Hsieh, though I go by the name "<strong>Tim</strong>".
+                        I am currently a <a href="https://math.mit.edu/directory/profile.html?pid=2798" class="text-primary" target="_blank">C.L.E. Moore Instructor of Mathematics</a> at MIT (departmental postdoc).
                     </p>
 
                     <p>
-                        My official name is Jun-Ting Hsieh, but I go by the name "<strong>Tim</strong>".
-                        I completed my PhD in the Computer Science Department at Carnegie Mellon University,
-                        where I was fortunate to be advised by <a href="http://praveshkkothari.org/" class="text-primary hover:underline">Pravesh K. Kothari</a>.
-                        I am broadly interested in Theoretical Computer Science.
-                        Recently, I've been thinking about constructions of expanders and their applications in coding theory.
-                        More generally, my research interests (and prior work) include average-case algorithms, semidefinite programming and the Sum-of-Squares hierarchy, and connections between TCS and extremal combinatorics.
+                        I am broadly interested in Theoretical Computer Science. Recently, I've been thinking about <strong>expander graphs</strong> and other <strong>pseudorandom objects</strong>, and their connections to <strong>algorithms beyond the worst case</strong>. More generally, my research interests (and prior work) include explicit constructions, coding theory, average-case complexity, semidefinite programming and the Sum-of-Squares hierarchy, and extremal combinatorics.
+                    </p>
+
+                    <p>
+                        Before MIT, I completed my PhD in the Computer Science Department at Carnegie Mellon University,
+                        where I was fortunate to be advised by <a href="http://praveshkkothari.org/" class="text-primary" target="_blank">Pravesh K. Kothari</a>.
+                        My PhD thesis can be found <a href="https://csd.cs.cmu.edu/academics/doctoral/degrees-conferred/junting-hsieh" class="text-primary" target="_blank">here</a>.
                     </p>
 
                     <!-- Job Market Banner -->
-                    <div class="bg-gray-100 border-l-4 border-primary p-4 mt-6 rounded-r">
-                        <p class="font-medium text-gray-800">
-                            I will be on the academic job market in Spring 2027, for positions starting in Fall 2027.
+                    <div class="job-market-banner">
+                        <p class="job-market-text">
+                            I am currently on the academic job market for positions starting in Fall 2027.
                         </p>
                     </div>
                 </div>
             </section>
 
-            <!-- PUBLICATIONS SECTION -->
-            <section id="publications" class="mb-40 pt-4">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Publications</h2>
-                
-                <!-- Current Publications (Generated by JS) -->
-                <div id="pub-list-recent" class="space-y-6 mb-12"></div>
+            <!--
+            <section id="research" class="page-section" aria-labelledby="research-heading">
+                <h2 id="research-heading" class="section-heading">
+                    Research
+                </h2>
 
-                <!-- Previous ML Publications (Generated by JS) -->
-                <h3 class="text-lg font-semibold text-gray-500 mb-6 uppercase tracking-wider border-t pt-8">Previous Publications in Machine Learning</h3>
-                <div id="pub-list-ml" class="space-y-6 mb-12"></div>
+                <p>
+                    My research is centered around <strong>expander graphs</strong>, and more generally, <strong>pseudorandom objects</strong>.
+                    I study the following questions:
+                </p>
 
-                <!-- Chemistry (Generated by JS) -->
-                <h3 class="text-lg font-semibold text-gray-500 mb-6 uppercase tracking-wider border-t pt-8">Chemistry</h3>
-                <div id="pub-list-chem" class="space-y-6"></div>
+                <ul class="highlight-list" style="margin-top: 1rem; margin-bottom: 1rem;">
+                    <li>
+                        How can we construct pseudorandom objects that exhibit the desirable properties of random ones?
+                    </li>
+                    <li>
+                        How can we exploit pseudorandom structure to design efficient algorithms?
+                    </li>
+                </ul>
+
+                <p>
+                    More broadly, my work spans explicit constructions, coding theory, algorithms beyond the worst case, and average-case complexity.
+                </p>
+
             </section>
+            -->
 
-            <!-- TEACHING SECTION -->
-            <section id="teaching" class="mb-40 pt-4">
-                <h2 class="text-3xl font-bold text-gray-800 mb-6 border-b pb-2">Teaching</h2>
-                
-                <div class="space-y-8">
-                    <!-- MIT -->
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">MIT (Instructor)</h3>
-                        <ul class="list-disc pl-5 text-gray-700 text-base space-y-2">
 
-                            <li>
-                                18.03 Differential Equations, Fall 2026<br>
-                            </li>
-
-                            <li>
-                                18.204 Undergraduate Seminar in Discrete Mathematics, Spring 2026<br>
-                            </li>
-
-                            <li>
-                                18.02 Multivariable Calculus, Fall 2025<br>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <!-- CMU -->
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-3">CMU (Teaching assistant)</h3>
-                        <ul class="list-disc pl-5 text-gray-700 text-base space-y-2">
-                            <li>
-                                15-751 CS Theory Toolkit, Spring 2022<br>
-                            </li>
-                            <li>
-                                15-855 Graduate Computational Complexity Theory, Spring 2021<br>
-                            </li>
-                        </ul>
-                    </div>
+            <section id="selected-publications" class="page-section" aria-labelledby="selected-publications-heading">
+                <div id="selected-publications-heading" class="section-heading" style="display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.5rem 1rem;">
+                    <h2 id="selected-publications-heading" style="font: inherit;">Selected Publications</h2>
+                    <a class="text-primary" href="publications.html" style="font-size: 1rem; font-weight: 600; white-space: nowrap;">All publications (by year or topic) &rarr;</a>
                 </div>
+                <div id="selected-pub-list" class="publication-list">
+                    <p class="muted">Loading selected publications...</p>
+                </div>
+                <noscript>
+                    <p>Enable JavaScript to display publications, or visit <a class="text-primary" href="https://scholar.google.com/citations?hl=en&amp;user=zYhq-BEAAAAJ&amp;view_op=list_works&amp;sortby=pubdate">Google Scholar</a>.</p>
+                    <style>#selected-pub-list { display: none; }</style>
+                </noscript>
             </section>
-
         </div>
     </main>
-
-    <!-- DATA IMPORT -->
-    <script src="data.js"></script>
-
-    <script>
-        // --- RANDOM PHOTO LOGIC ---
-        const profilePhotos = [
-            'files/tim.jpg',
-            'files/tim2.jpg', 
-            'files/tim3.jpg', 
-        ];
-
-        function renderPublications(listId, data) {
-            const container = document.getElementById(listId);
-            if (!container) return;
-            
-            container.innerHTML = data.map(paper => {
-                const renderedAuthors = paper.authors.map(author => {
-                    if (typeof author === 'string') {
-                        return author;
-                    } else if (author && author.url) {
-                        return `<a href="${author.url}" target="_blank" class="hover:underline">${author.name}</a>`;
-                    } else if (author) {
-                        return author.name;
-                    }
-                    return "";
-                }).join(", ");
-
-                let awardHtml = paper.award ? `<span class="text-yellow-800 font-bold ml-2">${paper.award}</span>` : '';
-                // Render journal alongside or below venue if present
-                let journalHtml = paper.journal ? `<span class="block font-normal text-gray-600">${paper.journal}</span>` : '';
-
-                let extraHtml = '';
-                
-                if (paper.extraLink2) {
-                     extraHtml += `<a href="${paper.extraLink2.url}" target="_blank" class="text-primary hover:underline mr-2">${paper.extraLink2.text}</a>`;
-                }
-                if (paper.extraLink) {
-                    extraHtml += `<a href="${paper.extraLink.url}" target="_blank" class="text-primary hover:underline">${paper.extraLink.text}</a>`;
-                }
-                if (extraHtml) {
-                    extraHtml = `<div class="mt-1 text-base">${extraHtml}</div>`;
-                }
-
-                return `
-                    <div>
-                        <h4 class="text-lg font-bold text-gray-900 leading-tight">
-                            <a href="${paper.url}" target="_blank" class="hover:text-primary hover:underline">${paper.title}</a>
-                        </h4>
-                        <p class="text-gray-700 mt-1">
-                            ${renderedAuthors}
-                        </p>
-                        <p class="text-base text-gray-500 mt-1 italic">
-                            ${paper.venue} ${awardHtml}
-                            ${journalHtml}
-                        </p>
-                        ${extraHtml}
-                    </div>
-                `;
-            }).join('');
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // Render Publications
-            renderPublications('pub-list-recent', recentPublications);
-            renderPublications('pub-list-ml', mlPublications);
-            renderPublications('pub-list-chem', chemPublications);
-
-            // --- RANDOM PHOTO LOGIC ---
-            const randomPhoto = profilePhotos[Math.floor(Math.random() * profilePhotos.length)];
-            const imgElement = document.getElementById('profile-pic');
-            if (imgElement) imgElement.src = randomPhoto;
-            
-          // --- SCROLL SPY LOGIC ---
-          const sections = document.querySelectorAll('section');
-          const navLinks = document.querySelectorAll('.nav-link');
-          
-          const observerOptions = {
-              root: null,
-              rootMargin: '-20% 0px -60% 0px', 
-              threshold: 0
-          };
-
-          const observer = new IntersectionObserver((entries) => {
-              entries.forEach(entry => {
-                  if (entry.isIntersecting) {
-                      navLinks.forEach(link => {
-                          link.classList.remove('active');
-                          link.classList.remove('text-gray-900');
-                          link.classList.add('text-gray-600');
-                      });
-                      
-                      const id = entry.target.getAttribute('id');
-                      const activeLink = document.querySelector(`.nav-link[href="#${id}"]`);
-                      if (activeLink) {
-                          activeLink.classList.add('active');
-                          activeLink.classList.remove('text-gray-600');
-                          activeLink.classList.add('text-gray-900');
-                      }
-                  }
-              });
-          }, observerOptions);
-
-          sections.forEach(section => {
-              observer.observe(section);
-          });
-       });
-    </script>
 </body>
 </html>
