@@ -90,7 +90,7 @@
         if (paper.journal) venue.append(element('span', 'publication-journal', paper.journal));
         article.append(venue);
 
-        const extraLinks = [paper.extraLink2, paper.extraLink].filter(link => link && link.url);
+        const extraLinks = [paper.extraLink, paper.extraLink2].filter(link => link && link.url);
         if (extraLinks.length > 0) {
             const extra = element('div', 'publication-extra');
             extraLinks.forEach(link => extra.append(externalLink(link.text, link.url, 'text-primary')));

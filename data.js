@@ -86,7 +86,7 @@ const recentPublications = [
     {
         title: "Rigorous Implications of the Low-Degree Heuristic",
         year: 2026,
-        selected: true,
+        selected: false,
         categories: ["average-case-complexity"],
         url: "https://arxiv.org/abs/2601.05850",
         authors: ["Jun-Ting Hsieh", people.DanielMKane, people.PraveshKKothari, people.JerryLi, people.SidhanthMohanty, people.StefanTiegel],
@@ -133,7 +133,8 @@ const recentPublications = [
         authors: ["Jun-Ting Hsieh", people.AlexLubotzky, people.SidhanthMohanty, people.AssafReiner, people.RachelYunZhang],
         venue: "FOCS, 2025",
         award: "Best Paper Award",
-        extraLink: { text: "[Blog post]", url: "blog/post.html?slug=lossless-expanders" }
+        extraLink: { text: "[Blog post]", url: "blog/post.html?slug=lossless-expanders" },
+        extraLink2: { text: "[Talk at Princeton]", url: "https://www.youtube.com/watch?v=uq2fdKXeYrY" }
     },
 
     {

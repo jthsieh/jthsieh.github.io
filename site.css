@@ -203,9 +203,9 @@ section { scroll-margin-top: 2rem; }
 .publication-authors { margin-top: .25rem; color: #374151; }
 .publication-authors a:hover { text-decoration: underline; }
 .publication-venue { margin-top: .25rem; color: var(--muted-color); font-style: italic; }
-.publication-venue .award { margin-left: .5rem; }
+.publication-venue .award { margin-left: 1.5rem; }
 .publication-journal { display: block; color: #4b5563; font-weight: 400; }
-.publication-extra { display: flex; flex-wrap: wrap; gap: .25rem .5rem; margin-top: .25rem; }
+.publication-extra { display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; margin-top: .25rem; }
 
 @media (min-width: 768px) {
     body { flex-direction: row; }
