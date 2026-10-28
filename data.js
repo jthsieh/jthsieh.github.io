@@ -79,7 +79,8 @@ const recentPublications = [
         categories: ["explicit-construction", "coding-theory"],
         url: "https://arxiv.org/abs/2601.12606",
         authors: ["Jun-Ting Hsieh", people.SidhanthMohanty, people.RachelYunZhang],
-        venue: "FOCS, 2026"
+        venue: "FOCS, 2026",
+        extraLink: { text: "[Talk at Simons]", url: "https://www.youtube.com/live/OsDagts7dak" }
     },
 
     {
@@ -169,7 +170,7 @@ const recentPublications = [
     {
         title: "Rounding Large Independent Sets on Expanders",
         year: 2025,
-        selected: false,
+        selected: true,
         categories: ["algorithms"],
         url: "https://arxiv.org/abs/2405.10238",
         authors: [people.MitaliBafna, "Jun-Ting Hsieh", people.PraveshKKothari],
