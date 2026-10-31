@@ -86,7 +86,7 @@ const recentPublications = [
     {
         title: "Rigorous Implications of the Low-Degree Heuristic",
         year: 2026,
-        selected: false,
+        selected: true,
         categories: ["average-case-complexity"],
         url: "https://arxiv.org/abs/2601.05850",
         authors: ["Jun-Ting Hsieh", people.DanielMKane, people.PraveshKKothari, people.JerryLi, people.SidhanthMohanty, people.StefanTiegel],
