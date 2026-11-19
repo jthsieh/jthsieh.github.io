@@ -64,7 +64,7 @@
                 <div class="biography">
                     <p>
                         Hello! 
-                        I'm Jun-Ting Hsieh, though I go by the name "<strong>Tim</strong>".
+                        I'm Jun-Ting Hsieh, and I go by the name "<strong>Tim</strong>".
                         I am currently a <a href="https://math.mit.edu/directory/profile.html?pid=2798" class="text-primary" target="_blank">C.L.E. Moore Instructor of Mathematics</a> at MIT (departmental postdoc).
                     </p>
 
@@ -87,34 +87,76 @@
                 </div>
             </section>
 
-            <!--
             <section id="research" class="page-section" aria-labelledby="research-heading">
-                <h2 id="research-heading" class="section-heading">
-                    Research
-                </h2>
+                <h2 id="research-heading" class="section-heading">Research Highlights</h2>
 
                 <p>
-                    My research is centered around <strong>expander graphs</strong>, and more generally, <strong>pseudorandom objects</strong>.
-                    I study the following questions:
+                For my papers, see my <a href="publications.html" class="text-primary">publication list</a> (selected, by year, or by topic).
                 </p>
 
-                <ul class="highlight-list" style="margin-top: 1rem; margin-bottom: 1rem;">
-                    <li>
-                        How can we construct pseudorandom objects that exhibit the desirable properties of random ones?
-                    </li>
-                    <li>
-                        How can we exploit pseudorandom structure to design efficient algorithms?
-                    </li>
-                </ul>
 
-                <p>
-                    More broadly, my work spans explicit constructions, coding theory, algorithms beyond the worst case, and average-case complexity.
-                </p>
+                <div class="research-topic">
+                    <h3>Explicit constructions of expanders and pseudorandom objects</h3>
+                    <ul class="highlight-list">
+                        <li>
+                            We give the first explicit construction of constant-degree <strong>lossless vertex expanders</strong> (in the sequence [<a class="research-citation" href="https://arxiv.org/abs/2302.01212" title="Explicit two-sided unique-neighbor expanders" target="_blank" rel="noopener noreferrer">HMMP24</a>, <a class="research-citation" href="https://arxiv.org/abs/2411.11627" title="Explicit Two-Sided Vertex Expanders Beyond the Spectral Barrier" target="_blank" rel="noopener noreferrer">HLMOZ25</a>, <a class="research-citation" href="https://arxiv.org/abs/2504.15087" title="Explicit Lossless Vertex Expanders" target="_blank" rel="noopener noreferrer">HLMRZ25</a>]); 
+                            see [<a class="research-citation" href="https://www.cs.huji.ac.il/~nati/PAPERS/expander_survey.pdf" title="Expander Graphs and Their Applications" target="_blank" rel="noopener noreferrer">HLW06</a>] for the history and context of this problem.
+                            My <a class="text-primary" href="blog/post.html?slug=lossless-expanders" target="_blank" rel="noopener noreferrer">blog post</a> has an overview of the construction and the key ingredient - <em>tripartite line product</em>.
+                            See also <a href="https://www.youtube.com/watch?v=uq2fdKXeYrY" class="text-primary" target="_blank">my talk</a> 
+                            and <a href="https://www.youtube.com/watch?v=ZZCm-Qf4xAU" class="text-primary" target="_blank">Rachel's talk</a>.
+                        </li>
+                        <li>
+                            We construct explicit <strong>ε-balanced codes</strong> [<a class="research-citation" href="https://arxiv.org/abs/2601.12606" title="Explicit Almost-Optimal Epsilon-Balanced Codes via Free Expander Walks" target="_blank" rel="noopener noreferrer">HMZ26</a>] with rate and distance almost matching the GV bound.
+                            We give a simple construction using <em>free expander walks</em>;
+                            see more in <a href="https://www.youtube.com/live/OsDagts7dak" class="text-primary" target="_blank">this talk</a>.
 
+                        </li>
+                        <li>
+                            We construct explicit <strong>constant-alphabet subspace design codes</strong> [<a class="research-citation" href="https://arxiv.org/abs/2604.15218" title="Explicit Constant-Alphabet Subspace Design Codes" target="_blank" rel="noopener noreferrer">GGH26</a>] using the expander-based AEL framework.
+                            The <em>subspace design</em> property captures list-decoding, list-recovery, and proximity gaps (see <a class="text-primary" href="https://www.youtube.com/watch?v=aTwa9JLYquA" target="_blank">Venkat's talk</a>).
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="research-topic">
+                    <h3>Algorithms beyond the worst case</h3>
+                    <ul class="highlight-list">
+                        <li>
+                            We develop efficient algorithms to partially color <strong>3-colorable graphs</strong> when the input graph is an expander [<a class="research-citation" href="https://arxiv.org/abs/2405.10238" title="Rounding Large Independent Sets on Expanders" target="_blank" rel="noopener noreferrer">BHK25</a>] 
+                            or has low threshold rank [<a class="research-citation" href="https://arxiv.org/abs/2508.03093" title="Coloring 3-Colorable Graphs with Low Threshold Rank" target="_blank" rel="noopener noreferrer">H26</a>].
+                            See more in <a href="https://www.ias.edu/video/rounding-large-independent-sets-expanders" class="text-primary" target="_blank">this talk</a>.
+                        </li>
+                        <li>
+                            We give efficient algorithms to solve <strong>semirandom CSPs</strong> (hybrids between worst-case and average-case input models).
+                            We study both the refutation problem [<a class="research-citation" href="https://arxiv.org/abs/2207.10850" title="A simple and sharper proof of the hypergraph Moore bound" target="_blank" rel="noopener noreferrer">HKM23</a>]
+                            and the search problem [<a class="research-citation" href="https://arxiv.org/abs/2309.16897" title="Efficient Algorithms for Semirandom Planted CSPs at the Refutation Threshold" target="_blank" rel="noopener noreferrer">GHKM23</a>].
+                        </li>
+                        <li>
+                            The techniques developed along the way led to improved lower bounds for <strong>locally decodable codes</strong> [<a class="research-citation" href="https://arxiv.org/abs/2411.14361" title="Improved Lower Bounds for all Odd-Query Locally Decodable Codes" target="_blank" rel="noopener noreferrer">BHKL25</a>] 
+                            and new results in <strong>extremal combinatorics</strong> [<a class="research-citation" href="https://arxiv.org/abs/2401.11590" title="Small Even Covers, Locally Decodable Codes and Restricted Subgraphs of Edge-Colored Kikuchi Graphs" target="_blank" rel="noopener noreferrer">HKMMS25</a>].
+                            See <a href="https://www.youtube.com/watch?v=P7xL4_mF7wo&t=366s" class="text-primary" target="_blank">my talk</a> and <a href="https://www.youtube.com/watch?v=B1bXmAcTctU" class="text-primary" target="_blank">Pravesh's talk</a> on the <em>Kikuchi method</em>.
+
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="research-topic">
+                    <h3>Average-case complexity and the low-degree heuristic</h3>
+                    <ul class="highlight-list">
+                        <li>
+                            We refute the <strong>low-degree conjecture</strong> of Hopkins (in the quasi-polynomial regime) [<a class="research-citation" href="https://arxiv.org/abs/2505.17360" title="The Quasi-Polynomial Low-Degree Conjecture is False" target="_blank" rel="noopener noreferrer">BHJK25</a>].
+                            This conjecture is the basis of the low-degree method, which is widely used to predict <em>information-computation gaps</em> in statistical signal detection and recovery problems 
+                            (see the surveys [<a class="research-citation" href="https://arxiv.org/abs/1907.11636" title="Notes on Computational Hardness of Hypothesis Testing: Predictions using the Low-Degree Likelihood Ratio" target="_blank" rel="noopener noreferrer">KWB19</a>, <a class="research-citation" href="https://arxiv.org/abs/2506.10748" title="Computational Complexity of Statistics: New Insights from Low-Degree Polynomials" target="_blank" rel="noopener noreferrer">W25</a>]).
+                        </li>
+                        <li>
+                            We investigate what low-degree hardness can prove unconditionally [<a class="research-citation" href="https://arxiv.org/abs/2601.05850" title="Rigorous Implications of the Low-Degree Heuristic" target="_blank" rel="noopener noreferrer">HKKLMT26</a>].
+                            We develop tools that turn low-degree hardness into unconditional lower bounds against concrete statistical tests and algorithms.
+                        </li>
+                    </ul>
+                </div>
             </section>
-            -->
 
-
+            <!--
             <section id="selected-publications" class="page-section" aria-labelledby="selected-publications-heading">
                 <div id="selected-publications-heading" class="section-heading" style="display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.5rem 1rem;">
                     <h2 id="selected-publications-heading" style="font: inherit;">Selected & Recent Publications</h2>
@@ -128,6 +170,8 @@
                     <style>#selected-pub-list { display: none; }</style>
                 </noscript>
             </section>
+            -->
+
         </div>
     </main>
 </body>

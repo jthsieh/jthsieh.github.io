@@ -2,6 +2,7 @@
 :root {
     --main-rgb: 59, 130, 246;
     --link-color: #2563eb;
+    --research-citation-color: #15803d; /* Change this value to recolor citation links. */
     --text-color: #1f2937;
     --muted-color: #6b7280;
     --page-background: #f9fafb;
@@ -177,6 +178,26 @@ section { scroll-margin-top: 2rem; }
 .all-publications-link { margin-top: 2rem; font-weight: 600; }
 .teaching-groups > section + section { margin-top: 2rem; }
 
+/* Research Highlights (Home only): larger topic titles and deeper list indentation. */
+#research .research-topic + .research-topic { margin-top: 1.25rem; }
+#research .research-topic h3 {
+    font-size: 1.2rem;
+    line-height: 1.35;
+    font-weight: 700;
+    margin-bottom: .85rem;
+    color: #111827;
+}
+#research .highlight-list { margin: 0; padding-left: 2.75rem; }
+#research .highlight-list li { padding-left: .2rem; line-height: 1.7; }
+#research .highlight-list li + li { margin-top: .3rem; }
+#research a.research-citation { color: var(--research-citation-color); }
+#research a.research-citation:hover { text-decoration: underline; }
+
+@media (max-width: 480px) {
+    #research .highlight-list { padding-left: 2.1rem; }
+    #research .research-topic h3 { font-size: 1.4rem; }
+}
+
 /* Publications preserve the original fields and overlapping subject filters. */
 .publication-filters { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2rem; }
 .publication-filter {
@@ -232,7 +253,10 @@ section { scroll-margin-top: 2rem; }
     .publication-entry, .research-topic { break-inside: avoid; }
 }
 
-#research-heading,
+#research-heading {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+}
 #selected-publications-heading {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -242,4 +266,8 @@ section { scroll-margin-top: 2rem; }
 #selected-publications {
     font-size: 1.125rem;
     line-height: 1.6;
+}
+
+#research-heading + p {
+    margin-bottom: 1.5rem;
 }
