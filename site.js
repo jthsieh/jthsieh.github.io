@@ -1,3 +1,4 @@
+
 /* Shared behavior. Publication data remains in data.js. */
 (() => {
     'use strict';
@@ -108,7 +109,7 @@
         list.replaceChildren(contents);
     }
 
-    // Selected papers appear only on Home, controlled by selected: true in data.js.
+    // Home shows selected papers, controlled by selected: true in data.js.
     if (page === 'home') {
         renderPublications(
             allPublications.filter(paper => paper.selected === true),
@@ -124,14 +125,15 @@
 
     function filterFromLocation() {
         const requested = new URLSearchParams(window.location.search).get('filter');
-        // Missing, unknown, or retired "selected" links open All publications.
-        return validFilters.has(requested) ? requested : 'all';
+        // Missing or unknown filters open Selected by default.
+        return validFilters.has(requested) ? requested : 'selected';
     }
 
     let activeFilter;
     function showPublications(filter) {
-        activeFilter = validFilters.has(filter) ? filter : 'all';
+        activeFilter = validFilters.has(filter) ? filter : 'selected';
         const papers = allPublications.filter(paper => {
+            if (activeFilter === 'selected') return paper.selected === true;
             if (activeFilter === 'all') return true;
             return Array.isArray(paper.categories) && paper.categories.includes(activeFilter);
         });
@@ -148,7 +150,7 @@
             showPublications(filter);
             // Shareable filters; Back/Forward restores the prior filter.
             const url = new URL(window.location.href);
-            if (filter === 'all') url.searchParams.delete('filter');
+            if (filter === 'selected') url.searchParams.delete('filter');
             else url.searchParams.set('filter', filter);
             try {
                 window.history.pushState(null, '', url.href);
